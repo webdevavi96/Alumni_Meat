@@ -1,17 +1,52 @@
 {% load static %}
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Alumni Meet MMIT</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 <body>
-   <h1>hello world</h1> 
+  <header>
+    <div class="logo"><a href="#">Alumni Meet</a></div>
+    <div class="text">
+      <p>Mahamaya IT Polytechnic Maharajganj</p>
+      <p id="address">Dhanewa Dhanei, District Jail Road, Maharajganj (UP) - 273303</p>
+    </div>
+    <div class="profile"><img src="{% static 'images/user.jpg' %}" alt="" id="profile"></div>
+  </header>
+  
+  <main>
+    <div class="heading"><h1>Welcome To Our Alumni Meet Portal</h1></div>
+    <div class="para">
+      <p><strong>"Connecting Generations, Building Futures –</strong> Welcome to the Mahamaya IT Polytechnic Alumni Network!"</p>
+    </div>
+    <div class="btn"><a href="#">Explore College</a></div>
+  </main>
+ 
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Jobs</a></li>
+      <li><a href="#">Mode</a></li>
+    </ul>
+  </nav>
+  
+  <footer>
+    <p>&copy; Copyright 2025 - All Rights Reserved - MMIT Polytechnic - Maharajganj(UP).</p>
+  </footer>
 </body>
+
+<script src="{% static `scripts/min.js`%}"></script>
 </html>
