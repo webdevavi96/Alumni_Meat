@@ -139,9 +139,18 @@ nav ul li a {
   transition: 0.3s;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+.theme:hover{
   color: #ff007f; /* Matches button hover color */
   border-radius: 5px;
+}
+
+.theme{
+  all: none;
+ color: white;
+ font-size: 1.1rem;
+ padding: 10px 15px;
+ transition: 0.3s;
 }
 
 /* Footer styles */
