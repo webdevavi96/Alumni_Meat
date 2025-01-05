@@ -22,5 +22,5 @@ from AlumniApp import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.landingpage),
-    path("home", views.homepage),
+    path("home/", views.homepage),
 ]
