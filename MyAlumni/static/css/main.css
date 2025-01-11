@@ -21,15 +21,16 @@ header {
   padding: 10px 15px;
 }
 
+
 .logo a {
-  text-decoration: none;
-  color: white;
-  font-size: 1.1rem;
-  padding: 10px 15px;
-  transition: 0.3s;
+text-decoration: none;
+color: white;
+font-size: 1.1rem;
+padding: 10px 15px;
+transition: 0.3s;
 }
 
-.logo>a:hover {
+.logo>a:hover{
   color: #ff007f; /* Matches button hover color */
   border-radius: 5px;
 }
@@ -42,24 +43,23 @@ header {
   color: #00ffff; /* Cyan color for title */
 }
 
-.text>#address {
+.text>#address{
   font-size: 12px;
   color: white;
 }
-
 .profile img {
   height: 40px;
   width: 40px;
   border-radius: 50%;
 }
 
-/* Main section styles */
-main {
+/* landing page section styles */
+.container {
   color: white;
   text-align: center;
   position: relative;
   z-index: 1;
-  min-height: 290px;
+  min-height: 325px;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
@@ -67,11 +67,11 @@ main {
   align-items: center;
 }
 
-main::after {
+.container::after {
   content: "";
   width: 100%;
-  height: 290px;
-  background-image: url('/static/images/college.jpeg');
+  height: 325px;
+  background-image: url('/images/college.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
@@ -83,24 +83,24 @@ main::after {
   border-bottom: 1px solid white;
 }
 
-main h1 {
+.container h1 {
   font-size: 2rem;
   font-family: 'Georgia', serif;
   margin-bottom: 10px;
 }
 
-main p {
+.container p {
   font-size: 1.2rem;
   margin-bottom: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-main .btn a {
+.container .btn a{
   text-decoration: none;
   color: #ffffff;
 }
 
-main .btn {
+.container .btn {
   background-color: #ff007f; /* Button color */
   color: white;
   padding: 10px 20px;
@@ -112,7 +112,7 @@ main .btn {
   transition: 0.3s;
 }
 
-main .btn:hover {
+.container .btn:hover {
   background-color: #ff4da6; /* Lighter shade on hover */
 }
 
@@ -122,6 +122,10 @@ nav {
   color: white;
   padding: 10px 0;
   border-top: 1px solid white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 nav ul {
@@ -139,18 +143,47 @@ nav ul li a {
   transition: 0.3s;
 }
 
-nav ul li a:hover,
-.theme:hover{
-  color: #ff007f; /* Matches button hover color */
+nav ul li a:hover {
+  color: #ff007f;
   border-radius: 5px;
 }
 
-.theme{
-  all: unset;
- color: white;
- font-size: 1.1rem;
- padding: 10px 15px;
- transition: 0.3s;
+/* Main section styles here*/
+
+main {
+  padding: 30px;
+  background-color: #f5f5f5; /* Light grey for contrast */
+}
+
+main h2 {
+  text-align: center;
+  color: #5d005d; /* Purple tone matching nav */
+  font-size: 2rem;
+  font-family: 'Georgia', serif;
+  margin-bottom: 20px;
+}
+
+main p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+main .about-mmit {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+main .about-mmit:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
 }
 
 /* Footer styles */

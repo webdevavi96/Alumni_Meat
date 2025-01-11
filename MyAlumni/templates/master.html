@@ -6,33 +6,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title></title>
+  <title>MMIT | Alumni | About Us</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+  <link rel="stylesheet" href="{% static 'css/master.css' %}">
 </head>
 <body>
     <header>
-  <div class="head">
       <div class="logo"><a href="#">Alumni Meet</a></div>
-  <div class="text">
-    <p>Mahamaya IT Polytechnic Maharajganj</p>
-    <p id="address">Dhanewa Dhanei, District Jail Road, Maharajganj (UP) - 273303</p>
-  </div>
-  <div class="profile"><img src="{% static 'images/user.jpg' %}" alt="" id="profile"></div>
-  </div>
+      <nav>
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About Us</a></li>
+          <li><a href="{% url 'events' %}">Events</a></li>
+          <li><a href="{% url 'news' %}">News</a></li>
+          <li><a href="{% url 'gallery' %}">Gallery</a></li>
+          <li><a href="{% url 'contact' %}">Contact Us</a></li>
+          <li><a href="{% url 'jobs' %}">Jobs</a></li>
+          <li><a href="{% url 'profile' %}">Profile</a></li>
+          <li><button class="theme">Dark</button></li>
+        </ul>
+      </nav>
+    </header>
   
-  <nav>
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About Us</a></li>
-    <li><a href="#">Events</a></li>
-    <li><a href="#">News</a></li>
-    <li><a href="#">Gallery</a></li>
-    <li><a href="#">Contact Us</a></li>
-    <li><a href="#">Jobs</a></li>
-    <li><a href="#">Mode</a></li>
-  </ul>
-</nav>
-  </header>
+    <main>
+      <section class="home">
+        <div class="card">
+          <h2>About Institute</h2>
+          <div class="card-body">
+            <div class="body-text">
+              <div class="image">
+                <p>
+                  Mahamaya IT Polytechnic Maharajganj is a Government diploma college located in Dhanewa-Dhanei, Maharajganj, Uttar Pradesh. Affiliated with the Uttar Pradesh Board of Technical Education, the college offers full-time, AICTE-approved diploma courses in various engineering fields.
+                </p>
+                <img src="{% static 'images/college3.jpg' %}" alt="college">
+              </div>
+              <p class="bold">The available programs include:</p>
+              <ul>
+                <li>Diploma in Computer Science and Engineering (1st shift) - Maximum intake: 75</li>
+                <li>Diploma in Electrical Engineering (1st shift) - Maximum intake: 75</li>
+                <li>Diploma in Electronic Engineering (1st shift) - Maximum intake: 75</li>
+              </ul>
+              <p>
+                All courses are designed to provide quality education and training in specific technical disciplines, preparing students for careers in the rapidly evolving engineering and technology sectors.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   
-  
+    <footer>
+      <p>&copy; 2025 - All Rights Reserved - MMIT Polytechnic - Maharajganj (UP).</p>
+    </footer>
 </body>
 </html>

@@ -1,52 +1,68 @@
-{% load static %}
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Alumni Meet MMIT</title>
+ <title>Alumni Meet MMIT</title> </title>
 
-  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
-  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+ <link rel="shortcut icon" type="image/x-icon" href="/images/logo.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <div class="logo"><a href="#">Alumni Meet</a></div>
     <div class="text">
-      <p>Mahamaya IT Polytechnic Maharajganj</p>
-      <p id="address">Dhanewa Dhanei, District Jail Road, Maharajganj (UP) - 273303</p>
-    </div>
-    <div class="profile"><img src="{% static 'images/user.jpg' %}" alt="" id="profile"></div>
+  <p>Mahamaya IT Poytechnic Maharajganj</p>
+  <p id="address">Dhanewa Dhanei, District Jail Road, Maharajganj (UP) - 273303</p>
+</div>
+    <div class="profile"><img src="/images/user.jpg" alt="" id="profile"></div>
   </header>
   
-  <main>
+  <div class="container">
     <div class="heading"><h1>Welcome To Our Alumni Meet Portal</h1></div>
-    <div class="para">
-      <p><strong>"Connecting Generations, Building Futures –</strong> Welcome to the Mahamaya IT Polytechnic Alumni Network!"</p>
-    </div>
-    <div class="btn"><a href="https://www.mmitgp.ac.in/">Explore College</a></div>
-  </main>
+    <div class="para"><p>
+      <strong>
+    "Connecting Generations, Building Futures –</strong> Welcome to the Mahamaya IT Polytechnic Alumni Network!"
+    </p></div>
+    <div class="btn"><a href="#">Explore College</a></div>
+  </div>
  
+
   <nav>
+   
     <ul>
-      <li><a href="/home">Home</a></li>
-      <li><a href="/about-us">About Us</a></li>
-      <li><a href="/events">Events</a></li>
-      <li><a href="/news">News</a></li>
-      <li><a href="/gallery">Gallery</a></li>
-      <li><a href="/contactus">Contact Us</a></li>
-      <li><a href="/jobs">Jobs</a></li>
-      <li><button class="theme">Dark</button></li>
+      <li><a href="">Home</a></li>
+      <li><a href="">About Us</a></li>
+      <li><a href="">Events</a></li>
+      <li><a href="">News</a></li>
+      <li><a href="">Gallery</a></li>
+      <li><a href="">Contact Us</a></li>
+      <li><a href="">Jobs</a></li>
+      <li><a href="">Mode</a></li>
     </ul>
   </nav>
   
+  <main>
+  <section class="about-mmit">
+    <h2>About Mahamaya IT Polytechnic Maharajganj</h2>
+    <p>
+      Established with a vision to empower youth through quality technical education,
+      Mahamaya IT Polytechnic, Maharajganj, is a beacon of knowledge and innovation in Uttar Pradesh.
+      Located amidst serene surroundings, the institute offers diploma programs in various engineering disciplines,
+      designed to bridge the gap between academia and industry. With state-of-the-art facilities, experienced faculty,
+      and a strong commitment to excellence, MMIT provides an ideal platform for students to grow academically, professionally,
+      and personally. Our alumni network spans across industries and geographies, contributing significantly to
+      societal growth and technological advancements.
+    </p>
+    <p>
+      Join us and become a part of a legacy that nurtures talent and builds the foundation for a prosperous future.
+    </p>
+  </section>
+</main>
+  
   <footer>
-    <p>&copy; Copyright 2025 - All Rights Reserved - MMIT Polytechnic - Maharajganj(UP).</p>
+    <p>&copy; Copyright © 2025 - All Rights Reserved - MMIT Polytechnic - Maharajganj(UP).</p>
   </footer>
 </body>
-
-<script src="{% static 'scripts/min.js' %}"></script>
 </html>
