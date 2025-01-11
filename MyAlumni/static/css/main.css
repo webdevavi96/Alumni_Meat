@@ -71,7 +71,7 @@ transition: 0.3s;
   content: "";
   width: 100%;
   height: 325px;
-  background-image: url('/images/college.jpg');
+  background-image: url('/static/images/college.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
