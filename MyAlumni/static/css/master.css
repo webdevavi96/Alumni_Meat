@@ -84,6 +84,7 @@ main {
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 5px;
+  border-bottom: 4px solid #00b4d8;
 }
 
 .body-text {
@@ -108,16 +109,87 @@ main {
   font-weight: bold;
 }
 
-.image>img {
+.image > img {
   width: 80%;
   max-width: 380px;
-  height: auto;
+  height: auto; /* Ensures height adjusts according to aspect ratio */
   display: block;
   margin: 0 auto;
   border-radius: 5px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover; 
+}
+
+@media (max-width: 768px) {
+  .image{
+    flex-direction: column;
+  }
+  .image img {
+    width: 500px;
+    min-width: 100%;
+    aspect-ratio: 4 / 3; 
+  }
+}
+
+/* Mission and Vision styles using a science-inspired color palette */
+
+.mission {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background: #e3f2fd; /* Light science-blue background */
 }
 
 
+
+.mission .card {
+  background: #ffffff; /* White for a clean look */
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex: 1 1 calc(300px - 10px);
+  max-width: 100%;
+  min-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.2); /* Blue-green hover glow */
+}
+
+.mission .card .head {
+  color: #f1f1f1;
+  text-align: center;
+  padding: 12px 15px;
+    font-size: 1.2rem;
+    font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px; 
+}
+.mission .card .body {
+  padding: 20px;
+  color: #37474f; 
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.mission .card .body p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .mission .card {
+    flex: 1 1 100%; 
+  }
+  .mission .card .head{
+    padding: 8px 15px;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+}
 
 /* Footer styles */
 footer {
