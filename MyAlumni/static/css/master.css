@@ -134,6 +134,11 @@ main {
   padding-top: 10px;
 }
 
+#pi{
+  aspect-ratio: 1;
+ 
+}
+
 @media (max-width: 768px) {
   .image{
     flex-direction: column;
