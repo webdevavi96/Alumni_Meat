@@ -14,4 +14,4 @@ def events(request):
         {'id': 2, 'details': 'Technical Workshop by Experts', 'status': 'Ongoing', 'date_time': 'Tuesday 21 Jan 10AM'},
         {'id': 3, 'details': 'Cultural Program & Networking', 'status': 'Ended', 'date_time': 'Sunday 18 Jan 5PM'},
     ]
-    return render(request, 'pages/events.html', {'events': events})
+    return render(request, 'events.html', {'events': events})
