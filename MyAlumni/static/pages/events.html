@@ -1,0 +1,51 @@
+{% extends 'master.html' %}
+
+{% block title %}
+Events - Alumni Meet
+{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Alumni Meet Events</h2>
+<table class="table table-bordered table-hover">
+  <thead class="table-primary">
+    <tr>
+      <th>Event #</th>
+      <th>Event Details</th>
+      <th>Current Status</th>
+      <th>Date & Time</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for event in events %}
+    <tr>
+      <td>{{ event.id }}</td>
+      <td>{{ event.details }}</td>
+      <td>
+        <span class="badge 
+                {% if event.status == 'Upcoming' %}
+                    bg-warning text-dark
+                {% elif event.status == 'Ongoing' %}
+                    bg-success
+                {% else %}
+                    bg-secondary
+                {% endif %}
+                ">
+          {{ event.status }}
+        </span>
+      </td>
+      <td>{{ event.date_time }}</td>
+      <td>
+        <button class="btn btn-primary btn-sm" onclick="handleAction('{{ event.id }}', '{{ event.status }}')">Change Status</button>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<script>
+  function handleAction(eventId, status) {
+    alert(`Action triggered for Event #${eventId} with status: ${status}`);
+    // Add AJAX or redirection logic here
+  }
+</script>
+{% endblock %}
