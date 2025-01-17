@@ -128,10 +128,13 @@ main {
   align-self: flex-end;
   margin-left: auto;
 }
-
+p{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 #name{
   text-align: end;
   padding-top: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #pi{
