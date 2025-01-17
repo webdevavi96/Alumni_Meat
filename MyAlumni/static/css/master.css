@@ -130,6 +130,7 @@ main {
 }
 p{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.8;
 }
 #name{
   text-align: end;
