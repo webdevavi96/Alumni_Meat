@@ -47,11 +47,6 @@ transition: 0.3s;
   font-size: 12px;
   color: white;
 }
-.profile img {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-}
 
 /* landing page section styles */
 .container {

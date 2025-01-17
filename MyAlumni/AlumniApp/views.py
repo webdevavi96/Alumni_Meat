@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import user_passes_test
+from .forms import CustomUserRegistrationForm
 
 # Create your views here.
 
@@ -8,8 +11,7 @@ def home(request):
 def about(request):
   return render(request, "master.html")
   
-from django.contrib.auth.decorators import login_required
-
+  
 @login_required
 def events(request):
     # Check the user's type
@@ -26,12 +28,27 @@ def events(request):
             {'id': 2, 'details': 'Technical Workshop by Experts', 'status': 'Upcoming', 'date_time': 'Tuesday 21 Jan 10AM'},
             {'id': 3, 'details': 'Cultural Program & Networking', 'status': 'Ended', 'date_time': 'Sunday 18 Jan 5PM'},
         ]
-    else:  # For regular users or guests
+    else:  # For regular users
         events = [
             {'id': 1, 'details': 'Welcome to Alumni Meet 2025', 'status': 'Upcoming', 'date_time': 'Monday 30 Jan 2PM'},
             {'id': 2, 'details': 'Technical Workshop by Experts', 'status': 'Ended', 'date_time': 'Tuesday 21 Jan 10AM'},
             {'id': 3, 'details': 'Cultural Program & Networking', 'status': 'Ongoing', 'date_time': 'Sunday 18 Jan 5PM'},
         ]
     
-    # Render the events page with filtered events
     return render(request, 'pages/events.html', {'events': events})
+    
+
+def register(request):
+    if request.method == 'POST':
+        form = CustomUserRegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            if form.cleaned_data['role'] == 'Admin':
+                user.is_staff = True  # Admin users can access Django Admin
+                user.is_superuser = True  # Grant superuser privileges
+            user.save()
+            login(request, user)  # Automatically log in the user
+            return redirect('/')  # Redirect to homepage after registration
+    else:
+        form = CustomUserRegistrationForm()
+    return render(request, 'pages/register.html', {'form': form})
