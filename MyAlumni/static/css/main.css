@@ -199,3 +199,175 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+
+
+/* Header styles */
+header {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000; /* Black background */
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+header .text {
+  flex-grow: 1; /* Allows the text to occupy remaining space */
+  text-align: center;
+  font-size: 18px;
+}
+
+header .text>#address {
+  font-size: 12px;
+  color: white;
+}
+
+/* Navigation styles */
+nav ul {
+  display: flex;
+  flex-wrap: wrap; /* Allow the items to wrap */
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  padding: 10px 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  padding: 5px 10px;
+}
+
+/* Responsive container for landing page */
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 1.8rem;
+}
+
+.container p {
+  font-size: 1rem;
+}
+
+.container .btn {
+  padding: 8px 15px;
+}
+
+/* Main section */
+main {
+  padding: 20px;
+}
+
+main h2 {
+  font-size: 1.5rem;
+}
+
+main p {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* Footer */
+footer {
+  font-size: 0.8rem;
+  padding: 10px;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+@media (max-width: 768px) {
+  /* Adjust header for smaller screens */
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+  }
+
+  .header .text {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack navigation vertically */
+    gap: 10px;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+
+  /* Container */
+  .container {
+    padding: 15px;
+  }
+
+  .container h1 {
+    font-size: 1.6rem;
+  }
+
+  .container p {
+    font-size: 0.9rem;
+  }
+
+  .container .btn {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+
+  /* Main section */
+  main h2 {
+    font-size: 1.4rem;
+  }
+
+  main p {
+    font-size: 0.9rem;
+  }
+
+  /* Footer adjustments */
+  footer p {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* For very small screens (mobile devices) */
+  header {
+    padding: 15px;
+  }
+
+  header .text {
+    font-size: 12px;
+  }
+
+  nav ul {
+    gap: 5px;
+  }
+
+  nav ul li a {
+    font-size: 0.8rem;
+  }
+
+  .container h1 {
+    font-size: 1.4rem;
+  }
+
+  .container p {
+    font-size: 0.8rem;
+  }
+
+  main h2 {
+    font-size: 1.2rem;
+  }
+
+  footer p {
+    font-size: 0.6rem;
+  }
+}
