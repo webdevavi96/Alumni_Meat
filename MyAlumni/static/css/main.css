@@ -54,7 +54,7 @@ transition: 0.3s;
 }
 
 /* landing page section styles */
-.container {
+.container-head {
   color: white;
   text-align: center;
   position: relative;
@@ -67,7 +67,7 @@ transition: 0.3s;
   align-items: center;
 }
 
-.container::after {
+.container-head::after {
   content: "";
   width: 100%;
   height: 325px;
@@ -83,24 +83,24 @@ transition: 0.3s;
   border-bottom: 1px solid white;
 }
 
-.container h1 {
+.container-head h1 {
   font-size: 2rem;
   font-family: 'Georgia', serif;
   margin-bottom: 10px;
 }
 
-.container p {
+.container-head p {
   font-size: 1.2rem;
   margin-bottom: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.container .btn a{
+.container-head .btn a{
   text-decoration: none;
   color: #ffffff;
 }
 
-.container .btn {
+.container-head .btn {
   background-color: #ff007f; /* Button color */
   color: white;
   padding: 10px 20px;
@@ -112,7 +112,7 @@ transition: 0.3s;
   transition: 0.3s;
 }
 
-.container .btn:hover {
+.container-head .btn:hover {
   background-color: #ff4da6; /* Lighter shade on hover */
 }
 
@@ -182,11 +182,11 @@ footer a:hover {
     font-size: 15px;
   }
 
-  .container h1 {
+  .container-head h1 {
     font-size: 1.5rem;
   }
 
-  .container p {
+  .container-head p {
     font-size: 1rem;
   }
 
