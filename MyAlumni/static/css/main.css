@@ -116,6 +116,9 @@ transition: 0.3s;
   background-color: #ff4da6; /* Lighter shade on hover */
 }
 
+nav{
+  position: relative;
+}
 /* Main section styles here*/
 
 main {
