@@ -128,7 +128,7 @@ button:hover{
   align-self: flex-end;
   margin-left: auto;
 }
-p{
+.text{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.8;
   font-weight: 200;
@@ -250,8 +250,8 @@ p{
 }
 
 .news-section img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -281,6 +281,15 @@ p{
 .news-content .read-more:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .news-section img{
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
 
 /* Footer */
 footer {
