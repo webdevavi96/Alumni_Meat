@@ -11,6 +11,8 @@ def home(request):
 def about(request):
   return render(request, "master.html")
   
+def news(request): 
+  return render(request, "news.html")
   
 @login_required
 def events(request):
