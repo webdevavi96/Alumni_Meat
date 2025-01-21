@@ -116,10 +116,6 @@ transition: 0.3s;
   background-color: #ff4da6; /* Lighter shade on hover */
 }
 
-nav{
-  position: relative;
-  z-index: 1000;
-}
 /* Main section styles here*/
 
 main {
