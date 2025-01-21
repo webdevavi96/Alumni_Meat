@@ -12,7 +12,7 @@ def about(request):
   return render(request, "master.html")
   
 def news(request): 
-  return render(request, "news.html")
+  return render(request, "pages/news.html")
   
 @login_required
 def events(request):
