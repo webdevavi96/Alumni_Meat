@@ -309,3 +309,32 @@ footer a:hover {
   color: #0056b3;
   text-decoration: underline;
 }
+
+
+@media (max-width: 768px) {
+  
+  nav ul{
+    align-items: flex-start;
+  }
+
+  header .text {
+    font-size: 15px;
+  }
+
+  .nav-menu-items {
+    display: none;
+  }
+  
+  .nav-menu-items.active{
+    display: block;
+  }
+  
+  .nav-menu-items ul{
+    flex-direction: column;
+    transition: .2s all;
+  }
+  
+  .nav-btn{
+    display: block;
+  }
+}
