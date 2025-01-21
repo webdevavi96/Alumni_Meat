@@ -117,7 +117,7 @@ transition: 0.3s;
 }
 
 /* Navigation styles */
-.nav-menu-items {
+nav {
   background-color: #5d005d; /* Purple tone as per the footer design */
   color: white;
   padding: 10px 0;
