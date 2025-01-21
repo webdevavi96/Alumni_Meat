@@ -221,14 +221,6 @@ p{
 /*News styling here*/
 
 
-#news-head{
-  all: unset;
-  padding: 10px 5px;
-  background: #0AC8FFC4;
-  color: #000;
-  text-align: center;
-}
-
 /* News Grid */
 .news-grid {
   display: grid;
