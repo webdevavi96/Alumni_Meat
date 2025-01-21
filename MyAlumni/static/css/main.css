@@ -54,7 +54,7 @@ transition: 0.3s;
 }
 
 /* landing page section styles */
-.container-head {
+.head-container {
   color: white;
   text-align: center;
   position: relative;
@@ -67,7 +67,7 @@ transition: 0.3s;
   align-items: center;
 }
 
-.container-head::after {
+.head-container::after {
   content: "";
   width: 100%;
   height: 325px;
@@ -83,24 +83,24 @@ transition: 0.3s;
   border-bottom: 1px solid white;
 }
 
-.container-head h1 {
+.head-container h1 {
   font-size: 2rem;
   font-family: 'Georgia', serif;
   margin-bottom: 10px;
 }
 
-.container-head p {
+.head-container p {
   font-size: 1.2rem;
   margin-bottom: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.container-head .btn a{
+.head-container .btn a{
   text-decoration: none;
   color: #ffffff;
 }
 
-.container-head .btn {
+.head-container .btn {
   background-color: #ff007f; /* Button color */
   color: white;
   padding: 10px 20px;
@@ -112,10 +112,9 @@ transition: 0.3s;
   transition: 0.3s;
 }
 
-.container-head .btn:hover {
+.head-container .btn:hover {
   background-color: #ff4da6; /* Lighter shade on hover */
 }
-
 
 /* Main section styles here*/
 
@@ -177,16 +176,18 @@ footer a:hover {
 
 
 @media (max-width: 768px) {
+  
 
   header .text {
     font-size: 15px;
   }
 
-  .container-head h1 {
+
+  .head-container h1 {
     font-size: 1.5rem;
   }
 
-  .container-head p {
+  .head-container p {
     font-size: 1rem;
   }
 
@@ -203,4 +204,3 @@ footer a:hover {
     font-size: 0.8rem; /* Smaller font for better readability */
   }
 }
-
