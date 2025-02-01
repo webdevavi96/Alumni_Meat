@@ -21,10 +21,20 @@ header {
   z-index: 1000;
 }
 
+.brand{
+  background: linear-gradient(120deg, #5805FF, #BC05FF);
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 600;
+  font-style: italic;
+}
 
 /* Navigation menu style is here...*/
 nav{
   background: #034CD6;
+  width: 80%;
   margin: 0;
   padding: 0;
   font-size: 16px;
