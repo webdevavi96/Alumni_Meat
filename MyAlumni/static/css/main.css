@@ -118,7 +118,7 @@ font-style: normal;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('/static/images/college.jpg');
+  background-image: url('/static/images/college.jpg') contain;
   background-repeat: no-repeat;
   background-origin: content-box;
 }
