@@ -10,9 +10,10 @@ body{
 
 header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 15px 5px;
+  width: 100%;
   background-color: #5d005d;
   position: sticky;
   top: 0;
@@ -27,9 +28,10 @@ nav{
   margin: 0;
   padding: 0;
   font-size: 16px;
+  position: relative;
 }
 
-nav>ul{
+nav ul{
   padding: 10px 5px;
   display: flex;
   justify-content: space-around;
@@ -45,7 +47,7 @@ nav>ul{
 font-family: sans-serif;
 font-weight: 700;
 font-style: normal;
- font-size: 1.18rem;
+ font-size: 1.1rem;
  transition: all .2s ease-in-out;
 }
 
