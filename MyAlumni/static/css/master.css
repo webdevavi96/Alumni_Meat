@@ -244,6 +244,11 @@ body{
 }
 
 
+/*Gallery styles are here....*/
+.gallery-container{
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+}
 
 /* Footer */
 footer {
