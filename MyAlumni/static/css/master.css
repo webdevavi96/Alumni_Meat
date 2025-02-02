@@ -18,7 +18,7 @@ header {
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .brand{
@@ -38,7 +38,6 @@ nav{
   margin: 0;
   padding: 0;
   font-size: 16px;
-  position: relative;
 }
 
 nav ul{
