@@ -14,6 +14,9 @@ def about(request):
 def news(request): 
   return render(request, "pages/news.html")
   
+def gallery(request):
+  return render(request, "pages/gallery.html")
+
 @login_required
 def events(request):
     # Check the user's type
