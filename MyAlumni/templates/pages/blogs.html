@@ -1,89 +1,81 @@
 {% extends 'master.html' %}
-
 {% load static %}
 
 {% block content %}
 <!-- Main Content -->
-  <main class="news-container">
-    <!-- Intro Section -->
-    <section class="intro">
-      <h2>Latest News & Updates</h2>
-      <p>Stay informed with the latest happenings and announcements from our vibrant alumni community.</p>
-    </section>
+<main class="blog-container">
+  <!-- Intro Section -->
+  <section class="intro">
+    <h2>Latest Blogs & Updates</h2>
+    <p>Stay informed with the latest insights, stories, and experiences shared by our vibrant alumni community.</p>
+  </section>
 
-    <!-- News Grid Section -->
-    <section class="news-grid">
-      <!-- News Article 1 -->
-      <article class="news-section">
-        <img src="{% static '/images/college.jpg' %}" alt="A scenic view of our college campus">
-        <div class="news-content">
-          <h3>Alumni Meet 2025 Announced</h3>
-          <p>The much-awaited alumni meet is scheduled for May 2025. Join us to reconnect and relive memories.</p>
-          <a href="news-details.html" class="read-more">Read More</a>
-        </div>
-      </article>
+  <!-- Blog Grid Section -->
+  <section class="blog-grid">
+    <!-- Blog Articles -->
+    <article class="blog-section">
+      <img src="{% static 'images/college.jpg' %}" alt="A scenic view of our college campus">
+      <div class="blog-content">
+        <h3>Alumni Meet 2025 Announced</h3>
+        <p>The much-awaited alumni meet is scheduled for May 2025. Join us to reconnect and relive memories.</p>
+        <a href="blog-details.html" class="read-more">Read More</a>
+      </div>
+    </article>
 
-      <!-- News Article 2 -->
-      <article class="news-section">
-        <img src="{% static '/images/college3.jpg' %}" alt="An inspiring success story">
-        <div class="news-content">
+    <article class="blog-section">
+      <img src="{% static 'images/college3.jpg' %}" alt="An inspiring success story">
+      <div class="blog-content">
         <h3>Spotlight on Success</h3>
         <p>Celebrate the achievements of our alumni who are making remarkable contributions across the globe.</p>
-        <a href="news-details.html" class="read-more">Read More</a>
-        </div>
-      </article>
+        <a href="blog-details.html" class="read-more">Read More</a>
+      </div>
+    </article>
 
-      <!-- News Article 3 -->
-      <article class="news-section">
-        <img src="{% static '/images/user.jpg' %}" alt="Technology meetup highlights">
-       <div class="news-content">
+    <article class="blog-section">
+      <img src="{% static 'images/user.jpg' %}" alt="Technology meetup highlights">
+      <div class="blog-content">
         <h3>Technology Meetup Highlights</h3>
         <p>A glimpse into the recent tech meetup hosted by our alumni, featuring insights and networking opportunities.</p>
-        <a href="news-details.html" class="read-more">Read More</a>
-        </div>
-      </article>
+        <a href="blog-details.html" class="read-more">Read More</a>
+      </div>
+    </article>
 
-      <!-- News Article 3 -->
-      <article class="news-section">
-        <img src="{% static '/images/logo.png' %}" alt="Technology meetup highlights">
-       <div class="news-content">
+    <article class="blog-section">
+      <img src="{% static 'images/logo.png' %}" alt="Technology meetup highlights">
+      <div class="blog-content">
         <h3>Technology Meetup Highlights</h3>
         <p>A glimpse into the recent tech meetup hosted by our alumni, featuring insights and networking opportunities.</p>
-        <a href="news-details.html" class="read-more">Read More</a>
-        </div>
-      </article>
+        <a href="blog-details.html" class="read-more">Read More</a>
+      </div>
+    </article>
 
-      <!-- News Article 3 -->
-      <article class="news-section">
-        <img src="{% static '/images/Principal.jpg' %}" alt="Technology meetup highlights">
-        <div class="news-content">
+    <article class="blog-section">
+      <img src="{% static 'images/Principal.jpg' %}" alt="Technology meetup highlights">
+      <div class="blog-content">
         <h3>Technology Meetup Highlights</h3>
         <p>A glimpse into the recent tech meetup hosted by our alumni, featuring insights and networking opportunities.</p>
-        <a href="news-details.html" class="read-more">Read More</a>
-        </div>
-      </article>
+        <a href="blog-details.html" class="read-more">Read More</a>
+      </div>
+    </article>
 
-      <!-- News Article 3 -->
-      <article class="news-section">
-        <img src="{% static '/images/college.jpg' %}" alt="Technology meetup highlights">
-        <div class="news-content">
+    <article class="blog-section">
+      <img src="{% static 'images/college.jpg' %}" alt="Technology meetup highlights">
+      <div class="blog-content">
         <h3>Technology Meetup Highlights</h3>
         <p>A glimpse into the recent tech meetup hosted by our alumni, featuring insights and networking opportunities.</p>
-        <a href="news-details.html" class="read-more">Read More</a>
-        </div>
-      </article>
+        <a href="blog-details.html" class="read-more">Read More</a>
+      </div>
+    </article>
 
-      <!-- News Article 3 -->
-      <article class="news-section">
-        <img src="{% static '/images/college3.jpg' %}" alt="Technology meetup highlights">
-        <div class="news-content">
+    <article class="blog-section">
+      <img src="{% static 'images/college3.jpg' %}" alt="Technology meetup highlights">
+      <div class="blog-content">
         <h3>Technology Meetup Highlights</h3>
         <p>A glimpse into the recent tech meetup hosted by our alumni, featuring insights and networking opportunities.</p>
-        <a href="news-details.html" class="read-more">Read More</a>
-        </div>
-      </article>
-    </section>
-
-  </main>
+        <a href="blog-details.html" class="read-more">Read More</a>
+      </div>
+    </article>
+  </section>
+</main>
 
 {% endblock %}
