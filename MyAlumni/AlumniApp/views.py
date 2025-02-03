@@ -11,8 +11,8 @@ def home(request):
 def about(request):
   return render(request, "master.html")
   
-def news(request): 
-  return render(request, "pages/news.html")
+def blogs(request): 
+  return render(request, "pages/blogs.html")
   
 def gallery(request):
   return render(request, "pages/gallery.html")
