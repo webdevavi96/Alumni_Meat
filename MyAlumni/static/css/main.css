@@ -11,6 +11,17 @@ body {
   color: black;
 }
 
+/*Loading style is here..*/
+
+.loading {
+  height: 100vh;
+  width: 100%;
+}
+
+.before-loading {
+  display: none;
+}
+
 /* Header styles */
 header {
   display: flex;

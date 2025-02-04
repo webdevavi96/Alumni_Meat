@@ -15,3 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+function loader() {
+  const loaderItem = document.getElementsByClassName('loading');
+  const bodyElements = document.getElementsByClassName('after-loading');
+  
+}
