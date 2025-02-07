@@ -15,8 +15,24 @@
 
 <body>
   
-  <video class="loading" src="{static '/images/assets/loading.webm'}"></video>
-  
+<div class="loader">
+  <video class="loading" autoplay loop muted>
+    <source src="/images/loader.webm" type="video/webm" />
+  </video>
+  <div class="loading-text">
+    <span>L</span>
+    <span>O</span>
+    <span>A</span>
+    <span>D</span>
+    <span>I</span>
+    <span>N</span>
+    <span>G</span>
+    <span>.</span>
+    <span>.</span>
+    <span>.</span>
+  </div>
+</div>
+<div class="loaded">
   <header>
     <div class="logo"><a href="#">Alumni Meet</a></div>
     <div class="text">
@@ -71,6 +87,7 @@
     <p>&copy; Copyright © 2025 - All Rights Reserved - MMIT Polytechnic - Maharajganj(UP).</p>
   </footer>
 
+</div>
 
   <script src="{% static 'scripts/min.js' %}"></script>
 </body>

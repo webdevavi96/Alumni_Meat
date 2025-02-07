@@ -14,10 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.add('active');
     }
   });
+  
+  setTimeout(() => {
+      loader();
+  }, 1000);
 });
 
+
+const loaderItem = document.querySelector('.loader');
+const bodyElements = document.querySelector('.loaded');
 function loader() {
-  const loaderItem = document.getElementsByClassName('loading');
-  const bodyElements = document.getElementsByClassName('after-loading');
-  
+  bodyElements.style.display = 'block'
+  loaderItem.style.display = 'none'
+
 }
