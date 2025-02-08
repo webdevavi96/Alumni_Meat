@@ -21,11 +21,11 @@ from AlumniApp import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", views.home),
-    path("about/", views.about),
-    path("events/", views.events),
-    path("blogs/", views.blogs),
-    path("register/", views.register),
-    path("gallery/", views.gallery),
-    path("profile/", views.userProfile),
+    path("", views.home name = "home"),
+    path("about/", views.about, name = about),
+    path("events/", views.events, name = "events"),
+    path("blogs/", views.blogs, name = "blogs"),
+    path("register/", views.register, name = "register"),
+    path("gallery/", views.gallery, name = "gallery"),
+    path("profile/", views.userProfile, name = "profile"),
 ]
