@@ -81,6 +81,7 @@ font-style: normal;
 
 #userProfile{
   background: linear-gradient(130deg, #FB00D9, #0065D9);
+  border-radius: 10px;
 }
 
 .nav-link:hover,
