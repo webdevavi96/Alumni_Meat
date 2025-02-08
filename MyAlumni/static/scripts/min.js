@@ -11,7 +11,7 @@ function loader() {
 const userProfile = document.querySelector('.profile');
 function triggerUser() {
   userProfile.addEventListener('click', () => {
-      window.location.href = '/profile/'
+      window.location.href = profilrUrl;
   });
 }
 
