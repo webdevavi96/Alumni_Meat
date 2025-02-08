@@ -17,6 +17,10 @@ def blogs(request):
 def gallery(request):
   return render(request, "pages/gallery.html")
 
+
+def userProfile(request):
+  return render(requset, "pages/profile.html")
+
 @login_required
 def events(request):
     # Check the user's type
