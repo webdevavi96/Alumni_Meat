@@ -7,15 +7,6 @@ function loader() {
 
 }
 
-//js for user profile
-const userProfile = document.querySelector('#user');
-function triggerUser() {
-  userProfile.addEventListener('click', () => {
-      window.location.href = profilrUrl;
-      alert("clicked")
-  });
-}
-
 //all function will run after the page fully loaded
 document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link');
@@ -39,8 +30,5 @@ document.addEventListener('DOMContentLoaded', () => {
      loader();
   }, 1000);
   
-  
-  //user profile navigation function
-  triggerUser();
 });
 
