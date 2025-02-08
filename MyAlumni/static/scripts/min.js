@@ -8,7 +8,7 @@ function loader() {
 }
 
 //js for user profile
-const userProfile = document.querySelector('.profile');
+const userProfile = document.querySelector('#user');
 function triggerUser() {
   userProfile.addEventListener('click', () => {
       window.location.href = profilrUrl;
