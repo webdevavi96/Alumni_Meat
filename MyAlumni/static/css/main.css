@@ -79,6 +79,10 @@ font-style: normal;
  cursor: pointer;
 }
 
+#userProfile{
+  background: linear-gradient(130deg, #FB00D9, #0065D9);
+}
+
 .nav-link:hover,
 #userProfile:hover{
   background: linear-gradient(135deg, #3F3F3FD9, #034CD6);
