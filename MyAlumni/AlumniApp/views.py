@@ -19,7 +19,7 @@ def gallery(request):
 
 
 def userProfile(request):
-  return render(requset, "pages/profile.html")
+  return render(request, "pages/profile.html")
 
 @login_required
 def events(request):
