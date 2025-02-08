@@ -12,6 +12,7 @@ const userProfile = document.querySelector('#user');
 function triggerUser() {
   userProfile.addEventListener('click', () => {
       window.location.href = profilrUrl;
+      alert("clicked")
   });
 }
 
