@@ -79,7 +79,8 @@ font-style: normal;
  cursor: pointer;
 }
 
-.nav-link:hover{
+.nav-link:hover,
+#userProfile:hover{
   background: linear-gradient(135deg, #3F3F3FD9, #034CD6);
   color: #FFFFFF;
   padding: 8px 10px;
