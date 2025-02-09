@@ -270,7 +270,7 @@ body {
 }
 
 /* Headings */
-.profileh4, .profileh3{
+.profileh3, .profileh4{
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 15px;
