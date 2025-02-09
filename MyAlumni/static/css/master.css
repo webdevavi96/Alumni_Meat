@@ -198,7 +198,7 @@ footer a:hover {
 
 /*Styles for Profile*/
 /* General Styles */
-.profileBody {
+body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #5D037F, #B560D6);
     color: white;
@@ -225,7 +225,7 @@ footer a:hover {
 }
 
 /* Header */
-.user-box header {
+.user-box .profileheader {
     position: absolute;
     top: 10px;
     right: 20px;
@@ -234,8 +234,8 @@ footer a:hover {
     gap: 10px;
 }
 
-.user-box header button,
-.user-box header a {
+.user-box .profileheader button,
+.user-box .profileheader a {
     background: transparent;
     border: none;
     color: white;
@@ -245,7 +245,7 @@ footer a:hover {
     padding: 5px 10px;
 }
 
-.user-box header button:last-child {
+.user-box .profileheader button:last-child {
     color: red;
     font-weight: bold;
 }
@@ -327,7 +327,7 @@ address {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    .user-box header {
+    .user-box .profileheader {
         position: static;
         display: flex;
         flex-direction: row;
@@ -337,8 +337,8 @@ address {
         margin-top: 10px;
     }
     
-    .user-box header button,
-    .user-box header a {
+    .user-box .profileheader button,
+    .user-box .profileheader a {
         font-size: 12px;
         padding: 5px;
     }
