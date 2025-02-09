@@ -193,3 +193,177 @@ footer a:hover {
   color: #0056b3;
   text-decoration: underline;
 }
+
+
+
+/*Styles for Profile*/
+/* General Styles */
+.profileBody {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #5D037F, #B560D6);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background: rgba(226, 247, 255, 0.06);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.41);
+}
+
+/* User Box */
+.user-box {
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: 1px solid white;
+}
+
+/* Header */
+.user-box header {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-box header button,
+.user-box header a {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.user-box header button:last-child {
+    color: red;
+    font-weight: bold;
+}
+
+/* Profile */
+.profile-container img {
+    border-radius: 50%;
+    border: 4px solid white;
+    width: 130px;
+    height: 120px;
+}
+
+.profile-container h2 {
+    margin-top: 10px;
+    font-size: 22px;
+    font-style: italic;
+}
+
+/* User Details */
+.user-details {
+    padding: 20px;
+}
+
+/* Headings */
+h3, h4 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border-bottom: 1px solid white;
+    display: inline-block;
+    padding-bottom: 3px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+
+address {
+    font-style: normal;
+}
+
+/* Skills Section */
+.skills-section {
+    margin-top: 25px;
+}
+
+.skills-section ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skills-section li {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .user-box header {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        gap: 5px;
+        margin-top: 10px;
+    }
+    
+    .user-box header button,
+    .user-box header a {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .skills-section ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-section li {
+        width: 80%;
+        text-align: center;
+    }
+    h3{
+      display: block;
+    }
+    h4{
+   display: inline;
+}
+}
+
+@media screen and (max-width: 480px) {
+    .skills-section li {
+        width: 90%;
+        font-size: 14px;
+        padding: 8px;
+    }
+}
