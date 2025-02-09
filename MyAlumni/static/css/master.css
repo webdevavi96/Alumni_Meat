@@ -270,7 +270,7 @@ body {
 }
 
 /* Headings */
-h3, h4 {
+.profileh4, .profileh3{
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -352,10 +352,10 @@ address {
         width: 80%;
         text-align: center;
     }
-    h3{
+    .profileh3{
       display: block;
     }
-    h4{
+   .profileh4{
    display: inline;
 }
 }
