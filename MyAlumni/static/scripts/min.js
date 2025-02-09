@@ -1,19 +1,16 @@
-//js loading screen
-const loaderItem = document.querySelector('.loader');
-const bodyElements = document.querySelector('.loaded');
-const body = document.querySelector('body');
-function loader() {
-  bodyElements.style.display = 'block'
-  loaderItem.style.display = 'none'
-
-}
-
-
-
-//all function will run after the page fully loaded
 document.addEventListener('DOMContentLoaded', () => {
+  const loaderItem = document.querySelector('.loader');
+  const bodyElements = document.querySelector('.loaded');
+  const body = document.body;
   const navLinks = document.querySelectorAll('.nav-link');
 
+  // Function to hide loader and show content
+  function loader() {
+    if (bodyElements) bodyElements.style.display = 'block';
+    if (loaderItem) loaderItem.style.display = 'none';
+  }
+
+  // Navigation link active state handling
   navLinks.forEach((link) => {
     link.addEventListener('click', () => {
       navLinks.forEach(nav => nav.classList.remove('active'));
@@ -21,20 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Set active link based on current page URL
   const activeLink = window.location.pathname;
   navLinks.forEach((link) => {
     if (link.getAttribute('href') === activeLink) {
       link.classList.add('active');
     }
-    if (activeLink === 'profile') {
-      body.classList.add('profileBody');
-    }
   });
-  
-  //loading screen timeout function
-  setTimeout(() => {
-     loader();
-  }, 1000);
-  
-});
 
+  // Add profileBody class if the user is on the profile page
+  if (activeLink.includes('profile')) {
+    body.classList.add('profileBody');
+  }
+
+  // Loading screen timeout function
+  setTimeout(loader, 1000);
+});
