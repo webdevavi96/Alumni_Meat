@@ -17,6 +17,8 @@ def blogs(request):
 def gallery(request):
   return render(request, "pages/gallery.html")
 
+def contactUs(request):
+  return render(request, "pages/contact-us.html")
 
 def userProfile(request):
   return render(request, "pages/profile.html")
