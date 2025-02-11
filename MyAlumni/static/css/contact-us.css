@@ -8,7 +8,7 @@
       padding: 0;
       border-radius: 10px;
       overflow: hidden;
-    }
+    } 
 
     .contact-image {
       background: url('static/images/college.jpg') no-repeat center center/cover;
