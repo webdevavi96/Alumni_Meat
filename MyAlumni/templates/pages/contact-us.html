@@ -1,0 +1,25 @@
+{% extends 'master.html' %}
+
+{% block title %}
+Contact - Us - Alumni Meet
+{% endblock %}
+
+{% block content %}
+ <div class="container my-5">
+   <div class="row">
+     <div class="col-md-6 contact-image"></div>
+     <div class="col-md-6 contact-form">
+       <h2>Contact Us</h2>
+       <form method="POST" class="userForm" action="/index.html">
+         <input type="text" id="name" name="name" placeholder="Name">
+         <input type="email" id="email" name="email" placeholder="Email">
+         <input type="tel" id="number" name="number" placeholder="Number">
+         <input type="text" id="address" name="address" placeholder="Address">
+         <textarea id="message" name="message" rows="4" placeholder="Message"></textarea>
+         <button type="submit" class="submit-btn">Submit</button>
+       </form>
+     </div>
+   </div>
+ </div>
+ 
+ {% endblock %}
