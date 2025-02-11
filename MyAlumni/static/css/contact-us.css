@@ -11,7 +11,7 @@
     } 
 
     .contact-image {
-      background: url('static/images/college.jpg') no-repeat center center/cover;
+      background: url('/images/college.jpg') no-repeat center center/cover;
       min-height: 400px;
     }
 
@@ -70,7 +70,7 @@
   }
 
   .contact-form {
-    background: url('static/images/college.jpg') no-repeat center center/cover;
+    background: url('/images/college.jpg') no-repeat center center/cover;
     background-size: cover;
     position: relative;
     color: white;
