@@ -8,10 +8,10 @@
       padding: 0;
       border-radius: 10px;
       overflow: hidden;
-    } 
+    }
 
     .contact-image {
-      background: url('/images/college.jpg') no-repeat center center/cover;
+      background: url('/images/Annual_games_mmit.jpeg') no-repeat center center/cover;
       min-height: 400px;
     }
 
@@ -70,7 +70,7 @@
   }
 
   .contact-form {
-    background: url('/images/college.jpg') no-repeat center center/cover;
+    background: url('/images/Annual_games_mmit.jpeg') no-repeat center center/cover;
     background-size: cover;
     position: relative;
     color: white;
