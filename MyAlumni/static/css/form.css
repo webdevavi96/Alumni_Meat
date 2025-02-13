@@ -1,0 +1,60 @@
+/* Centering the form */
+.contact-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Heading */
+.contact-form h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+
+/* Input fields */
+.contact-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Submit Button */
+.contact-form .submit-btn {
+  width: 100%;
+  background: #007bff;
+  border: none;
+  padding: 10px;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form .submit-btn:hover {
+  background: #0056b3;
+}
+
+.underline{
+  text-decoration: underline;
+  color: #2B7CE8;
+  text-align: center;
+  display: block;
+}
+
+.contact-form select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #fff;
+  cursor: pointer;
+}
