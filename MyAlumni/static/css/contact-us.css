@@ -11,7 +11,7 @@
     }
 
     .contact-image {
-      background: url('/images/Annual_games_mmit.jpeg') no-repeat center center/cover;
+      background: url('/static/images/Annual_games_mmit.jpeg') no-repeat center/cover;
       min-height: 400px;
     }
 
@@ -35,6 +35,7 @@
       border-radius: 5px;
       background-color: #1b2a38;
       color: white;
+      text-align: start !important;
     }
 
     .contact-form input::placeholder,
@@ -70,7 +71,7 @@
   }
 
   .contact-form {
-    background: url('/images/Annual_games_mmit.jpeg') no-repeat center center/cover;
+    background: url('/images/Annual_games_mmit.jpeg') no-repeat center/cover;
     background-size: cover;
     position: relative;
     color: white;
