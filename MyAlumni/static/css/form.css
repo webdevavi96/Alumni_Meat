@@ -1,3 +1,11 @@
+body{
+  background: white;
+}
+
+.container1{
+  background: white;
+}
+
 /* Centering the form */
 .contact-form {
   background: #fff;
