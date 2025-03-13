@@ -20,13 +20,12 @@ def gallery(request):
 def contactUs(request):
   return render(request, "pages/contact-us.html")
 
+
+ @login_required
 def userProfile(request):
   return render(request, "pages/profile.html")
   
-def register(request):
-  return render(request, "pages/register.html")
-
-# @login_required
+ @login_required
 def events(request):
     # Check the user's type
     user = request.user
@@ -51,18 +50,3 @@ def events(request):
     
     return render(request, 'pages/events.html', {'events': events})
     
-
-def register(request):
-    if request.method == 'POST':
-        form = CustomUserRegistrationForm(request.POST)
-        if form.is_valid():
-            user = form.save(commit=False)
-            if form.cleaned_data['role'] == 'Admin':
-                user.is_staff = True  # Admin users can access Django Admin
-                user.is_superuser = True  # Grant superuser privileges
-            user.save()
-            login(request, user)  # Automatically log in the user
-            return redirect('/')  # Redirect to homepage after registration
-    else:
-        form = CustomUserRegistrationForm()
-    return render(request, 'pages/register.html', {'form': form})

@@ -234,7 +234,6 @@ body {
     gap: 10px;
 }
 
-.user-box .profileheader button,
 .user-box .profileheader a {
     background: transparent;
     border: none;
