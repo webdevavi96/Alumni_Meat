@@ -21,7 +21,7 @@ def contactUs(request):
   return render(request, "pages/contact-us.html")
 
 
- @login_required
+@login_required
 def userProfile(request):
   return render(request, "pages/profile.html")
   
