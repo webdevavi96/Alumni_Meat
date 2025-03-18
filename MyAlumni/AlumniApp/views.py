@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
@@ -61,7 +62,7 @@ def login(request):
 def get_data(request):
   data = {
     "message": "Hello from django",
-    "satus-code": 200,
+    "status-code": 200,
     "status": "success"
   }
   return JsonResponse(data)
@@ -75,7 +76,7 @@ def varify_user(request):
     email = data.get("email")
     password = data.get("password")
     
-    user = authenticate(username=email,password=password)
+    user = authenticate(email=email,password=password)
     
     if user is not None:
       return JsonResponse({"status": "success", "message":"Logged In Successfully"})

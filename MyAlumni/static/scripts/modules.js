@@ -19,25 +19,22 @@ document.addEventListener('DOMContentLoaded', () => {
             messageBox.innerHTML = "Logged in Successfully!";
             messageBox.style.color = 'green';
           }
-          alert("Logged In");
         } else {
           if (messageBox) {
             messageBox.innerHTML = "Username or password is incorrect!";
             messageBox.style.color = 'red';
           }
-     alert("Username or password is incorrect!");
         }
       } catch (error) {
-       alert(`Error:, ${error}`);
         if (messageBox) {
-          messageBox.innerHTML = "Something went wrong! Please try again.";
+          messageBox.innerHTML =`${error}`;
           messageBox.style.color = 'red';
         }
       }
     } else {
       if (messageBox) {
-        messageBox.innerHTML = "Username or password is invalid!";
-        messageBox.style.color = 'red';
+        messageBox.innerHTML = "Please enter a valid username or password!";
+        messageBox.style.color = 'orange';
       }
     }
   });
