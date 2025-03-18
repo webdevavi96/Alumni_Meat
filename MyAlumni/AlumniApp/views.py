@@ -52,3 +52,6 @@ def events(request):
     
 def register(request):
   return render(request, 'pages/register.html')
+  
+def login(request):
+  return render(request, 'pages/register.html')

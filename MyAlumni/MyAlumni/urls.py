@@ -30,4 +30,5 @@ urlpatterns = [
     path("contact-us", views.contactUs, name = "contact-us"),
     path("profile/", views.userProfile, name = "profile"),
     path("register/", views.register, name = "register"),
+    path("login/", views.login, name = "login"),
 ]
