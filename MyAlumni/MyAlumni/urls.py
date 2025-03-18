@@ -31,5 +31,5 @@ urlpatterns = [
     path("profile/", views.userProfile, name = "profile"),
     path("register/", views.register, name = "register"),
     path("accounts/login/", views.login, name = "login"),
-    path("api/data/", views.get_data, name = "get_data")''
+    path("api/data/", views.get_data, name = "get_data"),
 ]
