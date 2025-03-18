@@ -68,7 +68,7 @@ def get_data(request):
   
   
 def varify_user():
-  if request.method == 'POST:
+  if request.method == 'POST':
     import json
     data = json.loads(request.body)
     
