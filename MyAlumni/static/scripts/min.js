@@ -33,5 +33,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Loading screen timeout function
   setTimeout(loader, 1000);
-  
 });

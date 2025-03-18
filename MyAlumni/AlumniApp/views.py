@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import jsonResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
 from .forms import CustomUserRegistrationForm
@@ -55,3 +56,11 @@ def register(request):
   
 def login(request):
   return render(request, 'pages/register.html')
+  
+def get_data(request):
+  data = {
+    "message": "Hello from django"'
+    "satus-code": 200,
+    "status": "success"
+  }
+  return jsonResponse(data)
