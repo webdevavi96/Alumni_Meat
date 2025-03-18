@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
      alert("Username or password is incorrect!");
         }
       } catch (error) {
-       alert("Error:", error);
+       alert(`Error:, ${error}`);
         if (messageBox) {
           messageBox.innerHTML = "Something went wrong! Please try again.";
           messageBox.style.color = 'red';
