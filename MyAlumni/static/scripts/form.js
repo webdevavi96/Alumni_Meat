@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     loginForm.style.display = "none";
     resetLink.style.display = "none";
     newUserForm.style.display = "block";
-    console.log("hello")
+    // console.log("hello")
   }
 
   // Function to show login form again
