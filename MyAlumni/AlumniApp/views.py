@@ -80,6 +80,6 @@ def varify_user(request):
     if user is not None:
       return JsonResponse({"status": "success", "message":"Logged In Successfully"})
     else:
-      return JsonResponse({"status":"error", "message":"Failed"},statud=401)
+      return JsonResponse({"status":"error", "message":"Failed"},status=401)
       
   return JsonResponse({"status":"error","message":"Failed"},status=400)

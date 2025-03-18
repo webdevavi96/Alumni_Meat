@@ -1,15 +1,5 @@
 import * as apiFn from './api.js';
 
-async function getData() {
-  const dataFromAPI = await apiFn.test();
-  alert(dataFromAPI.message); // Now inside function
-}
-
-getData();
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.querySelector('.userForm');
   
@@ -52,3 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+
+// async function getData() {
+//   const dataFromAPI = await apiFn.test();
+//   alert(dataFromAPI.message); // Now inside function
+// }
+
+// getData();

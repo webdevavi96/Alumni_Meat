@@ -22,7 +22,7 @@ export async function sendData(userData) {
     const serverResponse = await fetch("https://super-happiness-7vprqj4vw6pg2p474-8000.app/api/varify_user/", {
       method: 'POST',
       headers: {
-        'Content-Type': 'aplication/json',
+        'Content-Type': 'application/json',
         'X-CSRFToken': getCSRFToken()
       },
       body: JSON.stringify(userData)
