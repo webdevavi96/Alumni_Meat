@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.contrib.aut import authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
-from .forms import CustomUserRegistrationForm
+# from .forms import CustomUserRegistrationForm
 
 # Create your views here.
 
@@ -64,3 +65,21 @@ def get_data(request):
     "status": "success"
   }
   return JsonResponse(data)
+  
+  
+def varify_user():
+  if request.method == 'POST:
+    import json
+    data = json.loads(request.body)
+    
+    email = data.get("email")
+    password = data.get("password")
+    
+    user = authenticate(username=email,password=password)
+    
+    if user is not None:
+      return JsonResponse({"status": "success", "message":"Logged In Successfully"})
+    else:
+      return JsonResponse({"status":"error", "message":"Failed"},statud=401)
+      
+  return JsonResponse({"status":"error","message":"Failed"},status=400)
