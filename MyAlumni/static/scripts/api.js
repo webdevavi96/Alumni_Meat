@@ -1,3 +1,3 @@
 export function greet(){
-  console.log("hello There!");
+  alert('hello! from modules.js')
 }

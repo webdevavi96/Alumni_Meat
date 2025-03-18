@@ -1,6 +1,3 @@
-import * as apiFn from './api.js';
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const loaderItem = document.querySelector('.loader');
   const bodyElements = document.querySelector('.loaded');
@@ -37,6 +34,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // Loading screen timeout function
   setTimeout(loader, 1000);
   
-  
-  apiFn.greet()
 });
