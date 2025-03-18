@@ -25,7 +25,7 @@ def contactUs(request):
 def userProfile(request):
   return render(request, "pages/profile.html")
   
- @login_required
+@login_required
 def events(request):
     # Check the user's type
     user = request.user
