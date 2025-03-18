@@ -88,12 +88,14 @@ body{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.8;
   font-weight: 200;
+  color: #000;
 }
 #name{
   text-align: end;
   padding-top: 10px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 400;
+  color: #000;
 }
 
 #pi{
