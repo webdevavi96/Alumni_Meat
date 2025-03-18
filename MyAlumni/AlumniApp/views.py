@@ -59,7 +59,7 @@ def login(request):
   
 def get_data(request):
   data = {
-    "message": "Hello from django"'
+    "message": "Hello from django",
     "satus-code": 200,
     "status": "success"
   }
