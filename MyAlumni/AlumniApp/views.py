@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import jsonResponse
+from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
 from .forms import CustomUserRegistrationForm
@@ -63,4 +63,4 @@ def get_data(request):
     "satus-code": 200,
     "status": "success"
   }
-  return jsonResponse(data)
+  return JsonResponse(data)
