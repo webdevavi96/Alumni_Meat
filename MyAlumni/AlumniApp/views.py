@@ -50,3 +50,5 @@ def events(request):
     
     return render(request, 'pages/events.html', {'events': events})
     
+def register(request):
+  return render(request, 'pages/register.html')
