@@ -19,13 +19,13 @@ export function getUser(email, password) {
 
 export async function sendData(userData) {
   try {
-    const serverResponse = await fetch("https://super-happiness-7vprqj4vw6pg2p474-8000.app./api/varify_user/", {
+    const serverResponse = await fetch("https://super-happiness-7vprqj4vw6pg2p474-8000.app/api/varify_user/", {
       method: 'POST',
       headers: {
-        'Content-Type': 'apllication/json',
+        'Content-Type': 'aplication/json',
         'X-CSRFToken': getCSRFToken()
       },
-      body: JSON.stringfy(userData)
+      body: JSON.stringify(userData)
     });
     
     const rData = await serverResponse.json();
