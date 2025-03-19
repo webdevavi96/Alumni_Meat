@@ -56,19 +56,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (fullname && email &&branch && year && enrollment && password && rePassword) {
       if (password === rePassword) {
      const person =  apiFn.newUser(fullname,email,branch,enrollment,year,password);
-        try {
-          const response = await newUserResponse(person);
-          // if (status === "success") {
-          //   if(messageBox){
-          //     messageBox.innerHTML = "Account created Successfully!";
-          //     messageBox.style.color = "green";
-          //   }
-          // }
-          messageBox.innerHTML = `${response}`
-        } catch (e) {
-        messageBox.innerHTML = `${e}`;
-        messageBox.style.color = 'red';
-        }
+        // try {
+        //   const response = await newUserResponse(person);
+        //   // if (status === "success") {
+        //   //   if(messageBox){
+        //   //     messageBox.innerHTML = "Account created Successfully!";
+        //   //     messageBox.style.color = "green";
+        //   //   }
+        //   // }
+        // } catch (e) {
+        // messageBox.innerHTML = `${e}`;
+        // messageBox.style.color = 'red';
+        // }
+        messageBox.innerHTML = `${response}`
       } else {
         messageBox.innerHTML = "Please enter correct password"; 
         messageBox.style.color = 'red';
