@@ -17,6 +17,18 @@ export function getUser(email, password) {
   return userDetails;
 }
 
+export function newUser(fullname, email, branch, enrollment, year, password) {
+  let newUserDetails = {
+    "fullname": fullname,
+    "email": email,
+    "branch": branch,
+    "enrollment": enrollment,
+    "year": year,
+    "password": password
+  }
+  return newUserDetails;
+}
+
 export async function sendData(userData) {
   try {
     const serverResponse = await fetch("https://super-happiness-7vprqj4vw6pg2p474-8000.app/api/varify_user/", {

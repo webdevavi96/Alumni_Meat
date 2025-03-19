@@ -1,7 +1,7 @@
 import * as apiFn from './api.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const loginForm = document.querySelector('.userForm');
+  const loginForm = document.querySelector('.loginForm');
   
   loginForm.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageBox = document.querySelector('.messageBox'); // Check for message box
     
     if (email && password) {
-      const person1 = apiFn.getUser(email, password);
+      const person = apiFn.getUser(email, password);
       try {
-        const response = await apiFn.sendData(person1);
+        const response = await apiFn.sendData(person);
         
         if (response.status === "success") {
           if (messageBox) {
@@ -34,17 +34,52 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       if (messageBox) {
         messageBox.innerHTML = "Please enter a valid username or password!";
-        messageBox.style.color = 'orange';
+        messageBox.style.color = 'red';
       }
     }
   });
+  
+  /*registrain functions are here...*/
+  const registraionForm = document.querySelector('.signInForm');
+  
+  registraionForm.addEventListener('submit', async (event)=>{
+    event.preventDefault();
+    
+    const fullname = document.querySelector('#fullname').value.trim();
+    const email = document.querySelector('#email').value.trim();
+    const branch = document.querySelector('#branch').value.trim();
+    const year = document.querySelector('#year').value.trim();
+    const enrollment = document.querySelector('#enrollment').value.trim();
+    const password = document.querySelector('#password').value.trim()
+    const rePassword = document.querySelector('#confirm_password').value.trim();
+    const messageBox = document.querySelector('.messageBox');
+    if (fullname && email &&branch && year && enrollment && password && rePassword) {
+      if (password === rePassword) {
+     const person =  apiFn.newUser(fullname,email,branch,enrollment,year,password);
+        try {
+          const response = await newUserResponse(person);
+          // if (status === "success") {
+          //   if(messageBox){
+          //     messageBox.innerHTML = "Account created Successfully!";
+          //     messageBox.style.color = "green";
+          //   }
+          // }
+          messageBox.innerHTML = `${response}`
+        } catch (e) {
+        messageBox.innerHTML = `${e}`;
+        messageBox.style.color = 'red';
+        }
+      } else {
+        messageBox.innerHTML = "Please enter correct password"; 
+        messageBox.style.color = 'red';
+      }
+    } else {
+      messageBox.innerHTML = "Please all fill fields (Mandetory)"; 
+      messageBox.style.color = "red";
+    }
+  });
+  
+  
 });
 
 
-
-// async function getData() {
-//   const dataFromAPI = await apiFn.test();
-//   alert(dataFromAPI.message); // Now inside function
-// }
-
-// getData();

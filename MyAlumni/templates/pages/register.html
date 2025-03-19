@@ -14,7 +14,7 @@ Log In
       <div class="contact-form loginForm">
         <p class="messageBox"></p>
         <h2 class="text-center">Login</h2>
-        <form method="POST" class="userForm" action="#">
+        <form method="POST" class="userForm loginForm" action="">
           {% csrf_token %}
           <input type="email" id="email" name="email" placeholder="Email" required>
           <input type="password" id="password" name="password" placeholder="Password" required>
@@ -28,7 +28,9 @@ Log In
       <!-- Registration Form -->
       <div class="contact-form newUserForm">
         <h2 class="text-center">Register New Account</h2>
-        <form method="POST" class="userForm" action="/index.html">
+        <p class="messageBox"></p>
+        <form method="POST" class="userForm signInForm" action="">
+          {% csrf_token %}
           <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
           <input type="email" id="email" name="email" placeholder="Email" required>
           
