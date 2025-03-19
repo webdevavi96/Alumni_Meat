@@ -40,45 +40,54 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   /*registrain functions are here...*/
-  const registraionForm = document.querySelector('.signInForm');
+  const registrationForm = document.querySelector('.signInForm');
+
+registrationForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
   
-  registraionForm.addEventListener('submit', async (event)=>{
-    event.preventDefault();
-    
-    const fullname = document.querySelector('#fullname').value.trim();
-    const email = document.querySelector('#email').value.trim();
-    const branch = document.querySelector('#branch').value.trim();
-    const year = document.querySelector('#year').value.trim();
-    const enrollment = document.querySelector('#enrollment').value.trim();
-    const password = document.querySelector('#password').value.trim()
-    const rePassword = document.querySelector('#confirm_password').value.trim();
-    const messageBox = document.querySelector('.messageBox');
-    if (fullname && email &&branch && year && enrollment && password && rePassword) {
-      if (password === rePassword) {
-     const person =  apiFn.newUser(fullname,email,branch,enrollment,year,password);
-        // try {
-        //   const response = await newUserResponse(person);
-        //   // if (status === "success") {
-        //   //   if(messageBox){
-        //   //     messageBox.innerHTML = "Account created Successfully!";
-        //   //     messageBox.style.color = "green";
-        //   //   }
-        //   // }
-        // } catch (e) {
-        // messageBox.innerHTML = `${e}`;
-        // messageBox.style.color = 'red';
-        // }
-        messageBox.innerHTML = `${response}`
-      } else {
-        messageBox.innerHTML = "Please enter correct password"; 
+  const fullname = document.querySelector('#fullname').value.trim();
+  const email = document.querySelector('#email').value.trim();
+  const branch = document.querySelector('#branch').value.trim();
+  const year = document.querySelector('#year').value.trim();
+  const enrollment = document.querySelector('#enrollment').value.trim();
+  const password = document.querySelector('#password').value.trim();
+  const rePassword = document.querySelector('#confirm_password').value.trim();
+  const messageBox = document.querySelector('.messageBox');
+  
+  if (fullname && email && branch && year && enrollment && password && rePassword) {
+    if (password === rePassword) {
+      // Get the user object from `apiFn.newUser()`
+      const person = apiFn.newUser(fullname, email, branch, enrollment, year, password);
+      
+      // Display the generated user object for debugging
+      console.log("Generated User Object:", person);
+      messageBox.innerHTML = JSON.stringify(person, null, 2); // Display user object in messageBox
+      messageBox.style.color = "blue";
+      
+      try {
+        // Assuming `newUserResponse(person)` sends data to the server
+        const response = await newUserResponse(person);
+        
+        if (response.status === "success") {
+          messageBox.innerHTML = "Account created successfully!";
+          messageBox.style.color = "green";
+        } else {
+          messageBox.innerHTML = response.message || "Registration failed.";
+          messageBox.style.color = "red";
+        }
+      } catch (e) {
+        messageBox.innerHTML = `Error: ${e.message}`;
         messageBox.style.color = 'red';
       }
     } else {
-      messageBox.innerHTML = "Please all fill fields (Mandetory)"; 
-      messageBox.style.color = "red";
+      messageBox.innerHTML = "Passwords do not match";
+      messageBox.style.color = 'red';
     }
-  });
-  
+  } else {
+    messageBox.innerHTML = "Please fill all fields (Mandatory)";
+    messageBox.style.color = "red";
+  }
+});
   
 });
 
