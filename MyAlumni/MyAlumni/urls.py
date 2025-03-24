@@ -18,6 +18,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from AlumniApp import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -33,4 +36,6 @@ urlpatterns = [
     path("accounts/login/", views.login, name = "login"),
     path("api/data/", views.get_data, name = "get_data"),
     path("api/varify_user/", views.varify_user, name = "varify_user"),
-]
+    path('api/register_user/', views.os.path.join(BASE_DIR,'static'),
+	, name = "register_user"),
+] + static(settings.MEDIA_URL, document_root.settings.MEDIA_ROOT)

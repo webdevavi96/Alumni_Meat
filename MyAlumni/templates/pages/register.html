@@ -34,24 +34,38 @@ Log In
           <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
           <input type="email" id="email" name="email" placeholder="Email" required>
           
-          <!-- Branch Selection -->
-          <select id="branch" name="branch" required>
-            <option value="" disabled selected>Select Your Branch</option>
-            <option value="CSE">Computer Science and Engineering</option>
-            <option value="EE">Electrical Engineering</option>
-            <option value="ECE">Electronics Engineering</option>
+          <!-- User Type Selection -->
+          <select id="user_type" name="user_type" required onchange="toggleStudentDetails()">
+            <option value="" disabled selected>Select User Type</option>
+            <option value="1st">Admin</option>
+            <option value="2nd">Alumni</option>
+            <option value="3rd">Student</option>
           </select>
           
-          <!-- Enrollment Number -->
-          <input type="text" id="enrollment" name="enrollment" placeholder="Enrollment Number" required>
-          
-          <!-- Year Selection -->
-          <select id="year" name="year" required>
-            <option value="" disabled selected>Select Year</option>
-            <option value="1st">1st Year</option>
-            <option value="2nd">2nd Year</option>
-            <option value="3rd">3rd Year</option>
-          </select>
+          <!-- Adding dynamic features according to user user Selection -->
+          <div class="students_details" style="display: none; margin-top: 15px;">
+            
+            <!-- Branch Selection -->
+            <select id="branch" name="branch" required>
+              <option value="" disabled selected>Select Your Branch</option>
+              <option value="CSE">Computer Science and Engineering</option>
+              <option value="EE">Electrical Engineering</option>
+              <option value="ECE">Electronics Engineering</option>
+            </select>
+            
+            <!-- Enrollment Number -->
+            <input type="text" id="enrollment" name="enrollment" placeholder="Enrollment Number" required>
+            
+            <!-- Year Selection -->
+            <select id="year" name="year" required>
+              <option value="" disabled selected>Select Year</option>
+              <option value="1st">1st Year</option>
+              <option value="2nd">2nd Year</option>
+              <option value="3rd">3rd Year</option>
+              <option value="3rd">Passout</option>
+            </select>
+            
+          </div>
           
           <input type="password" id="password" name="password" placeholder="Password" required>
           <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>

@@ -139,10 +139,6 @@ body{
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.mission .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.2); /* Blue-green hover glow */
-}
 
 .mission .card .head {
   color: #f1f1f1;
