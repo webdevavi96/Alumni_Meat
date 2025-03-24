@@ -72,22 +72,30 @@ def get_data(request):
 
 
 @csrf_exempt
-def varify_user(request):
-  if request.method == 'POST':
-    import json
-    data = json.loads(request.body)
-    
-    email = data.get("email")
-    password = data.get("password")
-    
-    user = authenticate(user_Email=email, user_Password=password)
-    
-    if user is not None:
-      return JsonResponse({"status": "success", "message":"Logged In Successfully"})
-    else:
-      return JsonResponse({"status":"error", "message":"User not found!"},status=401)
-      
-  return JsonResponse({"status":"error","message":"Invalid Request! "},status=400)
+def verify_user(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            email = data.get("email")
+            password = data.get("password")
+
+            # Check if user exists
+            user = User.objects.filter(user_Email=email).first()
+            
+            if user:
+                # Check password
+                if check_password(password, user.user_Password):
+                    # Redirect to home on success
+                    return render(request, "home.html")
+                else:
+                    return JsonResponse({"status": "error", "message": "Invalid password!"}, status=401)
+            else:
+                return JsonResponse({"status": "error", "message": "User not found!"}, status=404)
+
+        except json.JSONDecodeError:
+            return JsonResponse({"status": "error", "message": "Invalid JSON format"}, status=400)
+
+    return JsonResponse({"status": "error", "message": "Invalid request method!"}, status=400)
   
 
 
