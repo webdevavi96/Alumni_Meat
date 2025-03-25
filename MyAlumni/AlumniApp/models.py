@@ -37,7 +37,7 @@ class User(models.Model):
     
     
     
-class BlogPosts(models.Model): 
+class BlogPost(models.Model): 
   blog_Name = models.CharField(max_length=500)
   blog_Details = models.CharField(max_length=1000)
   image = models.ImageField(upload_to='blog_posts', null=True, blank=True)
