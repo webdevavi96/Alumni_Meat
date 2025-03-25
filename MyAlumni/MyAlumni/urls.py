@@ -36,6 +36,6 @@ urlpatterns = [
     path("accounts/login/", views.login, name = "login"),
     path("api/data/", views.get_data, name = "get_data"),
     path("api/varify_user/", views.varify_user, name = "varify_user"),
-    path('api/register_user/', views.os.path.join(BASE_DIR,'static'),
+    path("api/register_user/", views.os.path.join(BASE_DIR,"static"),
 	, name = "register_user"),
 ] + static(settings.MEDIA_URL, document_root.settings.MEDIA_ROOT)
