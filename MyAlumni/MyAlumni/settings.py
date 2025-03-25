@@ -136,4 +136,4 @@ MEDIA_ROOT = [
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-AUTH_USER_MODEL = 'AlumniApp.Users'
+AUTH_USER_MODEL = 'AlumniApp.User'
