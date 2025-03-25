@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 import json
-from django.views.decorators.csrf import csrf_exempt
 from .models import User
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
@@ -71,7 +70,7 @@ def get_data(request):
   
 
 
-@csrf_exempt
+
 def verify_user(request):
     if request.method == 'POST':
         try:
@@ -99,55 +98,48 @@ def verify_user(request):
   
 
 
-@csrf_exempt
 def new_user(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            
-            # Common Fields
+
+            # Extract Common Fields
             full_name = data.get("fullname")
             user_Email = data.get("email")
             user_type = data.get("user_type")
             user_Password = data.get("password")
-            
-            
+
             # Check if user already exists
             if User.objects.filter(user_Email=user_Email).exists():
                 return JsonResponse({"status": "error", "message": "User already exists!"}, status=400)
-            
+
             # Handle Student Specific Data
-            if user_type == "Student":
+            if user_type == "STUDENT":
                 branch = data.get("branch")
                 enrollment_Number = data.get("enrollment")
                 year = data.get("year")
-                
-                
-                # Create Student User
+
                 user = User.objects.create(
                     full_name=full_name,
-                    branch=branch,
                     user_Email=user_Email,
-                    year=year,
-                    enrollment_Number=enrollment_Number,
                     user_type=user_type,
-                    password=user_Password
+                    branch=branch,
+                    enrollment_Number=enrollment_Number,
+                    year=year,
+                    user_Password=user_Password,
                 )
                 return JsonResponse({"status": "success", "message": "Student account created successfully!"}, status=201)
-            
-            # Create Non-Student User
+
+            # For Admin or Alumni
             else:
                 user = User.objects.create(
                     full_name=full_name,
                     user_Email=user_Email,
                     user_type=user_type,
-                    password=user_Password
+                    user_Password=user_Password,
                 )
                 return JsonResponse({"status": "success", "message": "Account created successfully!"}, status=201)
-        
+
         except json.JSONDecodeError:
             return JsonResponse({"status": "error", "message": "Invalid JSON format"}, status=400)
-    
     return JsonResponse({"status": "error", "message": "Invalid request method"}, status=405)
-  
-
