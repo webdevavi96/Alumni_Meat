@@ -85,7 +85,7 @@ def verify_user(request):
                 # Check password
                 if check_password(password, user.user_Password):
                     # Redirect to home on success
-                    return render(request, "home.html")
+                    return JsonResponse({"status": "success", "message": "Login Successfull."}, status=201)
                 else:
                     return JsonResponse({"status": "error", "message": "Invalid password!"}, status=401)
             else:

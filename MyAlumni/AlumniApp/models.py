@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.hashers import make_password
 
-#Create your models here.....
+#Create your models here....
 
 class User(models.Model): 
     USER_TYPES = [
@@ -18,11 +18,10 @@ class User(models.Model):
     ]
     
     BRANCH_CHOICES = [
-      ('Computer Science and Engineering', 'Computer Science and Engineering'),
-      ('Electrical Engineering', 'Electrical Engineering'), 
-      ('Electronics Engineering', 'Electronics Engineering'),
+        ('Computer Science and Engineering', 'Computer Science and Engineering'),
+        ('Electrical Engineering', 'Electrical Engineering'), 
+        ('Electronics Engineering', 'Electronics Engineering'),
     ]
-
 
     full_name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='usersData/', null=True, blank=True)
@@ -33,15 +32,20 @@ class User(models.Model):
     year = models.CharField(max_length=10, choices=YEAR_CHOICES, null=True, blank=True)
     user_Password = models.CharField(max_length=100)
 
+    # Overriding save method to hash password on creation and update
     def save(self, *args, **kwargs):
-        # Hash password before saving (only on creation)
-        if not self.pk or self._state.adding:
+        if self.pk and not self._state.adding:
+            # On update, hash password if it's changed
+            original = User.objects.get(pk=self.pk)
+            if self.user_Password != original.user_Password:
+                self.user_Password = make_password(self.user_Password)
+        else:
+            # On create, hash the password
             self.user_Password = make_password(self.user_Password)
         super().save(*args, **kwargs)
     
     def __str__(self): 
         return self.full_name
-    
     
     
 class BlogPost(models.Model): 

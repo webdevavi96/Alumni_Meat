@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } catch (error) {
         if (messageBox) {
-          messageBox.innerHTML = 'Something went wrong! Pleasetry agin after sometime.';
+          messageBox.innerHTML = 'Something went wrong! Please try again after sometime.';
           messageBox.style.color = 'red';
         }
       }
@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+  
   
   /*registrain functions are here...*/
   const registrationForm = document.querySelector('.signInForm');
@@ -59,10 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
           const person = apiFn.newUser(fullname, email, branch, enrollment, year, user_type, password);
           
           // Display the generated user object for debugging
-        //  console.log("Generated User Object:", person);
-          messageBox.innerHTML = JSON.stringify(person, null, 2); // Display user object in messageBox
-          messageBox.style.color = "blue";
-        }
+          console.log("Generated User Object:", person);
+        
+         }
         
         else {
           if (fullname && email && user_type && password && rePassword) {
@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
         try {
-          // Assuming `newUserResponse(person)` sends data to the server
-          const response = await newUserResponse(person);
+          
+          const response = await apiFn.newUserResponse(person);
           
           if (response.status === "success") {
             window.location.href = '/login/';
@@ -98,13 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
   
   
   
-  function toggleStudentDetails() {
-    const isUser = document.querySelector('#user_type');
-    const captureStudent = document.querySelector('.students_details');
+});
+
+document.querySelector('#user_type').addEventListener('change', ()=>{
+  const captureStudent = document.querySelector('.students_details');
+  const isUser = document.querySelector('#user_type').value;
     if (isUser == 'Student') {
       captureStudent.style.display = 'block';
     } else {
-      captucptureStu.style.display = 'none';
+      captureStudent.style.display = 'none';
     }
-  }
-});
+})

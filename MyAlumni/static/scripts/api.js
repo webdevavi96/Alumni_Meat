@@ -32,10 +32,10 @@ export function newUser(fullname, email, branch, enrollment, year, user_type, pa
 
 export function newAdmin(fullname, email, user_type, password){
   let newAdminDetails = {
-    "fullname": "fullname",
-    "email": "email",
-    "user_type": "user_type",
-    "password": "password"
+    "fullname": fullname,
+    "email": email,
+    "user_type": user_type,
+    "password": password
   }
   return newAdminDetails;
 }
@@ -80,7 +80,7 @@ export async function newUserResponse(newUserDetails){
 
 function getCSRFToken() {
   let cookieValue = null;
-  const cookies = document.cookie.split(';');
+  const cookies = document.cookie ? document.cookie.split(';') : [];
   for (let i = 0; i < cookies.length; i++) {
     const cookie = cookies[i].trim();
     if (cookie.startsWith('csrftoken=')) {
@@ -88,5 +88,5 @@ function getCSRFToken() {
       break;
     }
   }
-  return cookieValue;
+  return cookieValue || "";
 }
