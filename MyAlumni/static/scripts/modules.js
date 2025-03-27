@@ -15,10 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const response = await apiFn.sendData(person);
         
         if (response.status === "success") {
-          if (messageBox) {
-            messageBox.innerHTML = "Logged in Successfully!";
-            messageBox.style.color = 'green';
-          }
+          window.location.href = '/';
         } else {
           if (messageBox) {
             messageBox.innerHTML = "Username or password is incorrect!";
@@ -27,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } catch (error) {
         if (messageBox) {
-          messageBox.innerHTML = `${error}`;
+          messageBox.innerHTML = 'Something went wrong! Pleasetry agin after sometime.';
           messageBox.style.color = 'red';
         }
       }
@@ -80,8 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const response = await newUserResponse(person);
           
           if (response.status === "success") {
-            messageBox.innerHTML = "Account created successfully!";
-            messageBox.style.color = "green";
+            window.location.href = '/login/';
           } else {
             messageBox.innerHTML = response.message || "Registration failed.";
             messageBox.style.color = "red";
