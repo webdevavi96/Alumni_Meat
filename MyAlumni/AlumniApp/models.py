@@ -16,12 +16,19 @@ class User(models.Model):
         ('3rd Year', '3rd Year'),
         ('Passout', 'Passout'),
     ]
+    
+    BRANCH_CHOICES = [
+      ('Computer Science and Engineering', 'Computer Science and Engineering'),
+      ('Electrical Engineering', 'Electrical Engineering'), 
+      ('Electronics Engineering', 'Electronics Engineering'),
+    ]
+
 
     full_name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='usersData/', null=True, blank=True)
     user_Email = models.EmailField(max_length=200, unique=True)
     user_type = models.CharField(max_length=7, choices=USER_TYPES)
-    branch = models.CharField(max_length=100, null=True, blank=True)
+    branch = models.CharField(max_length=100, null=True, blank=True choices=BRANCH_CHOICES)
     enrollment_Number = models.CharField(max_length=20, unique=True, null=True, blank=True)
     year = models.CharField(max_length=10, choices=YEAR_CHOICES, null=True, blank=True)
     user_Password = models.CharField(max_length=100)
@@ -45,3 +52,4 @@ class BlogPost(models.Model):
   def __str__(self):
     return self.blog_Name
   
+
