@@ -62,7 +62,7 @@ export async function sendData(userData) {
 
 export async function newUserResponse(newUserDetails){
   try {
-  const serverResponse = await fetch("https://super-happiness-7vprqj4vw6pg2p474-8000.app/api/register_user/", {
+  const serverResponse = await fetch("https://super-happiness-7vprqj4vw6pg2p474-8000.app/api/new_user/", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const person = apiFn.newUser(fullname, email, branch, enrollment, year, user_type, password);
           
           // Display the generated user object for debugging
-          console.log("Generated User Object:", person);
+        //  console.log("Generated User Object:", person);
           messageBox.innerHTML = JSON.stringify(person, null, 2); // Display user object in messageBox
           messageBox.style.color = "blue";
         }
