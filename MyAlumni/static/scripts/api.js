@@ -1,38 +1,10 @@
-export function getUser(email, password) {
-  return {
-    email: email,
-    password: password
-  };
-}
-
-export function newUser(fullname, email, branch, enrollment, year, user_type, password) {
-  return {
-    fullname,
-    email,
-    branch,
-    enrollment,
-    year,
-    user_type,
-    password
-  };
-}
-
-export function newAdmin(fullname, email, user_type, password) {
-  return {
-    fullname,
-    email,
-    user_type,
-    password
-  };
-}
-
-export async function sendData(userData) {
+export async function logInRequest(userData) {
   try {
     const response = await fetch("/verify_user/", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-CSRFToken': getCSRFToken()
+        'X-CSRFToken': csrfToken
       },
       body: JSON.stringify(userData)
     });
@@ -43,13 +15,13 @@ export async function sendData(userData) {
   }
 }
 
-export async function newUserResponse(newUserDetails) {
+export async function newUserRequest(newUserDetails) {
   try {
-    const response = await fetch("/new_user/", {
+    const response = await fetch("/new_user", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-CSRFToken': getCSRFToken()
+        'X-CSRFToken': csrfToken
       },
       body: JSON.stringify(newUserDetails)
     });
@@ -60,15 +32,15 @@ export async function newUserResponse(newUserDetails) {
   }
 }
 
-function getCSRFToken() {
-  let cookieValue = null;
-  const cookies = document.cookie ? document.cookie.split(';') : [];
-  for (let cookie of cookies) {
-    cookie = cookie.trim();
-    if (cookie.startsWith('csrftoken=')) {
-      cookieValue = cookie.substring('csrftoken='.length);
-      break;
-    }
-  }
-  return cookieValue || "";
-}
+// function getCSRFToken() {
+//   let cookieValue = null;
+//   const cookies = document.cookie ? document.cookie.split(';') : [];
+//   for (let cookie of cookies) {
+//     cookie = cookie.trim();
+//     if (cookie.startsWith('csrftoken=')) {
+//       cookieValue = cookie.substring('csrftoken='.length);
+//       break;
+//     }
+//   }
+//   return cookieValue || "";
+// }

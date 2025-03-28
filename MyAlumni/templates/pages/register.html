@@ -14,10 +14,10 @@ Log In
       <div class="contact-form loginForm">
         <p class="messageBox"></p>
         <h2 class="text-center">Login</h2>
-        <form method="POST" class="userForm loginForm" action="">
+        <form method="POST" class="userForm loginForm">
           {% csrf_token %}
-          <input type="email" id="login_email" name="email" placeholder="Email" required>
-          <input type="password" id="login_password" name="password" placeholder="Password" required>
+          <input type="email" id="login_email" name="login_email" placeholder="Email" required>
+          <input type="password" id="login_password" name="login_password" placeholder="Password" required>
           <button type="submit" class="submit-btn">Submit</button>
           <hr />
           <a href="#" class="underline resetPassword">Forgot Password?</a>
@@ -29,7 +29,7 @@ Log In
       <div class="contact-form newUserForm">
         <h2 class="text-center">Register New Account</h2>
         <p class="messageBox"></p>
-        <form method="POST" class="userForm signInForm" action="">
+        <form method="POST" class="userForm signInForm">
           {% csrf_token %}
           <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
           <input type="email" id="email" name="email" placeholder="Email" required>
