@@ -14,7 +14,7 @@ Log In
       <div class="contact-form loginForm">
         <p class="messageBox"></p>
         <h2 class="text-center">Login</h2>
-        <form method="POST" class="userForm loginForm" action="/verify_user/">
+        <form method="POST" class="userForm loginForm" action="/accounts/login/">
           {% csrf_token %}
           <input type="email" id="login_email" name="login_email" placeholder="Email" required>
           <input type="password" id="login_password" name="login_password" placeholder="Password" required>
