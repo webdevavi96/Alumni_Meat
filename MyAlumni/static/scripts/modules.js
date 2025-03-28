@@ -1,3 +1,6 @@
+import * as apiFn from '/api.js';
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.querySelector('.loginForm');
   
