@@ -68,7 +68,7 @@ def login(request):
         message.error(reuest, "Email or Password didn’t matched!....")
     else:
       message.error(reuest, "User dose not exists!...")
-  return render(request, 'pages/register.html')
+  return render(request, 'pages/login.html')
   
 
 
@@ -113,4 +113,4 @@ def register(request):
         )
         return redirect('login')
 
-    return render(request, 'register.html')
+    return render(request, 'pages/register.html')
