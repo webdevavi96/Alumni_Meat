@@ -221,7 +221,6 @@
   </footer>
   <script src="{% static 'scripts/min.js'%}"></script>
   <script src="{% static 'scripts/form.js'%}"></script>
-  <script type="module" src="{% static 'scripts/modules.js'%}"></script>
   <script>
     document.querySelector('#user_type').addEventListener('change', () => {
       const captureStudent = document.querySelector('.students_details');
@@ -234,9 +233,7 @@
       }
     });
   </script>
-  <script>
-  const csrfToken = "{{ csrf_token }}";
-  </script>
+
 </body>
 
 </html>
