@@ -15,7 +15,6 @@ urlpatterns = [
     path("contact-us/", views.contactUs, name="contact-us"),
     path("profile/", views.userProfile, name="profile"),
     path("accounts/login/", views.login, name="login"),
-    path("api/data/", views.get_data, name="get_data"),
     path("api/verify_user/", views.verify_user, name="verify_user"),
     path("api/new_user/", views.new_user, name="new_user"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (user_type === 'Student') {
       if (fullname && email && branch && year && enrollment && password) {
         person = apiFn.newUser(fullname, email, branch, enrollment, year, user_type, password);
+        alert('request sent');
       } else {
         messageBox.innerHTML = "Please fill all mandatory fields!";
         messageBox.style.color = 'red';
@@ -61,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (user_type === 'Admin') {
       if (fullname && email && password) {
         person = apiFn.newAdmin(fullname, email, user_type, password);
+        alert('request sent');
       } else {
         messageBox.innerHTML = "Please fill all mandatory fields!";
         messageBox.style.color = 'red';
@@ -72,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await apiFn.newUserResponse(person);
       if (response.status === "success") {
         window.location.href = '/login/';
+        alert('response got');
       } else {
         messageBox.innerHTML = response.message || "Registration failed.";
         messageBox.style.color = "red";

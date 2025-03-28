@@ -80,7 +80,7 @@ def verify_user(request):
 
             # Check if user exists
             user = User.objects.filter(user_Email=email).first()
-            
+            print(user)
             if user:
                 # Check password
                 if check_password(password, user.user_Password):
@@ -128,6 +128,7 @@ def new_user(request):
                     year=year,
                     user_Password=user_Password,
                 )
+                print(user)
                 return JsonResponse({"status": "success", "message": "Student account created successfully!"}, status=201)
 
             # For Admin or Alumni
@@ -138,6 +139,7 @@ def new_user(request):
                     user_type=user_type,
                     user_Password=user_Password,
                 )
+                print(user)
                 return JsonResponse({"status": "success", "message": "Account created successfully!"}, status=201)
 
         except json.JSONDecodeError:
