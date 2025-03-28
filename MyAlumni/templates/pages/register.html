@@ -1,7 +1,7 @@
 {% extends 'master.html' %}
 
 {% block title %}
-Log In
+Register
 {% endblock %}
 
 {% block content %}
@@ -9,21 +9,6 @@ Log In
 <div class="container my-5 container1">
   <div class="row justify-content-center">
     <div class="col-md-5">
-      
-      <!-- Login Form -->
-      <div class="contact-form loginForm">
-        <p class="messageBox"></p>
-        <h2 class="text-center">Login</h2>
-        <form method="POST" class="userForm loginForm" action="/accounts/login/">
-          {% csrf_token %}
-          <input type="email" id="login_email" name="login_email" placeholder="Email" required>
-          <input type="password" id="login_password" name="login_password" placeholder="Password" required>
-          <button type="submit" class="submit-btn">Submit</button>
-          <hr />
-          <a href="#" class="underline resetPassword">Forgot Password?</a>
-          <span class="underline">Don't have an account? <a href="#" class="newAccount">Create Here</a></span>
-        </form>
-      </div>
       
       <!-- Registration Form -->
       <div class="contact-form newUserForm">
@@ -72,7 +57,7 @@ Log In
           
           <button type="submit" class="submit-btn">Register</button>
           <hr />
-          <span class="underline">Already have an account? <a href="#" class="loginLink">Login here</a></span>
+          <span class="underline">Already have an account? <a href="/login/" class="loginLink">Login here</a></span>
         </form>
       </div>
     </div>

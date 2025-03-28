@@ -51,8 +51,6 @@ def events(request):
     
     return render(request, 'pages/events.html', {'events': events})
     
-def register(request):
-  return render(request, 'pages/register.html')
   
 def login(request):
   if request.method == 'POST': 
@@ -75,7 +73,7 @@ def login(request):
 
 
 
-def new_user(request):
+def register(request):
     if request.method == 'POST':
         full_name = request.POST.get("fullname")
         email = request.POST.get("email")
