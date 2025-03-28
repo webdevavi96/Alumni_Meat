@@ -59,7 +59,7 @@ def login(request):
     user_Email = request.POST.get('login_email')
     user_Password = request.POST.get('login_password')
     
-    if users.objects.filter(user_Email=user_Email).exists(): 
+    if Users.objects.filter(user_Email=user_Email).exists(): 
       user = authenticate(regular, user_Email=user_Email, user_Password=user_Password)
       
       if user is not none: 
@@ -85,7 +85,7 @@ def new_user(request):
         if not all([full_name, email, user_type, password]):
             return redirect('register')
 
-        if users.objects.filter(email=email).exists():
+        if Users.objects.filter(email=email).exists():
             return redirect('register')
 
         if user_type.upper() == "STUDENT":
@@ -96,7 +96,7 @@ def new_user(request):
             if not all([branch, enrollment_number, year]):
                 return redirect('register')
 
-            users.objects.create(
+            Users.objects.create(
                 full_name=full_name,
                 email=email,
                 user_type=user_type,
@@ -107,7 +107,7 @@ def new_user(request):
             )
             return redirect('login')
 
-        users.objects.create(
+        Users.objects.create(
             full_name=full_name,
             email=email,
             user_type=user_type,
