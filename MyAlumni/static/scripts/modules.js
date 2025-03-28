@@ -1,4 +1,4 @@
-import * as apiFn from '/api.js';
+import * as apiFn from './api.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
