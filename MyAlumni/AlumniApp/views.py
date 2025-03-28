@@ -1,10 +1,7 @@
-from django.shortcuts import render
-from django.http import JsonResponse
-import json
+from django.shortcuts import render, redirect
 from .models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.decorators import user_passes_test
 
 
 # Create your views here.
@@ -58,90 +55,64 @@ def register(request):
   return render(request, 'pages/register.html')
   
 def login(request):
+  if request.method == 'POST': 
+    user_Email = request.POST.get('login_email')
+    user_Password = request.POST.get('login_password')
+    
+    if users.objects.filter(user_Email=user_Email).exists(): 
+      user = authenticate(regular, user_Email=user_Email, user_Password=user_Password)
+      
+      if user is not none: 
+        login(request, user)
+        return redirect('home')
+        
+      else:
+        message.error(reuest, "Email or Password didn’t matched!....")
+    else:
+      message.error(reuest, "User dose not exists!...")
   return render(request, 'pages/register.html')
   
-def get_data(request):
-  data = {
-    "message": "Hello from django",
-    "status-code": 200,
-    "status": "success"
-  }
-  return JsonResponse(data)
-  
 
-
-
-def verify_user(request):
-    if request.method == 'POST':
-        try:
-            data = json.loads(request.body)
-            email = data.get("email")
-            password = data.get("password")
-
-            # Check if user exists
-            user = User.objects.filter(user_Email=email).first()
-            print(user)
-            if user:
-                # Check password
-                if check_password(password, user.user_Password):
-                    # Redirect to home on success
-                    return JsonResponse({"status": "success", "message": "Login Successfull."}, status=201)
-                else:
-                    return JsonResponse({"status": "error", "message": "Invalid password!"}, status=401)
-            else:
-                return JsonResponse({"status": "error", "message": "User not found!"}, status=404)
-
-        except json.JSONDecodeError:
-            return JsonResponse({"status": "error", "message": "Invalid JSON format"}, status=400)
-
-    return JsonResponse({"status": "error", "message": "Invalid request method!"}, status=400)
-  
 
 
 def new_user(request):
     if request.method == 'POST':
-        try:
-            data = json.loads(request.body)
+        full_name = request.POST.get("fullname")
+        email = request.POST.get("email")
+        user_type = request.POST.get("user_type")
+        password = request.POST.get("password")
 
-            # Extract Common Fields
-            full_name = data.get("fullname")
-            user_Email = data.get("email")
-            user_type = data.get("user_type")
-            user_Password = data.get("password")
+        if not all([full_name, email, user_type, password]):
+            return redirect('register')
 
-            # Check if user already exists
-            if User.objects.filter(user_Email=user_Email).exists():
-                return JsonResponse({"status": "error", "message": "User already exists!"}, status=400)
+        if users.objects.filter(email=email).exists():
+            return redirect('register')
 
-            # Handle Student Specific Data
-            if user_type == "STUDENT":
-                branch = data.get("branch")
-                enrollment_Number = data.get("enrollment")
-                year = data.get("year")
+        if user_type.upper() == "STUDENT":
+            branch = request.POST.get("branch")
+            enrollment_number = request.POST.get("enrollment")
+            year = request.POST.get("year")
 
-                user = User.objects.create(
-                    full_name=full_name,
-                    user_Email=user_Email,
-                    user_type=user_type,
-                    branch=branch,
-                    enrollment_Number=enrollment_Number,
-                    year=year,
-                    user_Password=user_Password,
-                )
-                print(user)
-                return JsonResponse({"status": "success", "message": "Student account created successfully!"}, status=201)
+            if not all([branch, enrollment_number, year]):
+                return redirect('register')
 
-            # For Admin or Alumni
-            else:
-                user = User.objects.create(
-                    full_name=full_name,
-                    user_Email=user_Email,
-                    user_type=user_type,
-                    user_Password=user_Password,
-                )
-                print(user)
-                return JsonResponse({"status": "success", "message": "Account created successfully!"}, status=201)
+            users.objects.create(
+                full_name=full_name,
+                email=email,
+                user_type=user_type,
+                branch=branch,
+                enrollment_number=enrollment_number,
+                year=year,
+                password=make_password(password),
+            )
+            return redirect('login')
 
-        except json.JSONDecodeError:
-            return JsonResponse({"status": "error", "message": "Invalid JSON format"}, status=400)
-    return JsonResponse({"status": "error", "message": "Invalid request method"}, status=405)
+        users.objects.create(
+            full_name=full_name,
+            email=email,
+            user_type=user_type,
+            password=make_password(password),
+        )
+        return redirect('login')
+
+    return render(request, 'register.html')
