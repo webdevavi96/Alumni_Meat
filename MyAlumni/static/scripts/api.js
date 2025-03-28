@@ -1,49 +1,34 @@
-// export async function test() {
-//   try {
-//     const response = await fetch("https://super-happiness-7vprqj4vw6pg2p474-8000.app.github.dev/api/data/");
-//     const data = await response.json();
-//     return data;
-//   } catch (error) {
-//     console.error("Error fetching data:", error);
-//     return { message: "Error fetching data" }; // Return default message
-//   }
-// }
-
 export function getUser(email, password) {
-  let userDetails = {
-    "email": email,
-    "password": password
-  }
-  return userDetails;
+  return {
+    email: email,
+    password: password
+  };
 }
 
 export function newUser(fullname, email, branch, enrollment, year, user_type, password) {
-  let newUserDetails = {
-    "fullname": fullname,
-    "email": email,
-    "branch": branch,
-    "enrollment": enrollment,
-    "year": year,
-    "user_type": user_type,
-    "password": password
-  }
-  return newUserDetails;
+  return {
+    fullname,
+    email,
+    branch,
+    enrollment,
+    year,
+    user_type,
+    password
+  };
 }
 
-export function newAdmin(fullname, email, user_type, password){
-  let newAdminDetails = {
-    "fullname": fullname,
-    "email": email,
-    "user_type": user_type,
-    "password": password
-  }
-  return newAdminDetails;
+export function newAdmin(fullname, email, user_type, password) {
+  return {
+    fullname,
+    email,
+    user_type,
+    password
+  };
 }
-
 
 export async function sendData(userData) {
   try {
-    const serverResponse = await fetch("https://super-happiness-7vprqj4vw6pg2p474-8000.app/api/varify_user/", {
+    const response = await fetch("https://super-happiness-7vprqj4vw6pg2p474-8000.app.github.dev/api/verify_user/", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -51,40 +36,37 @@ export async function sendData(userData) {
       },
       body: JSON.stringify(userData)
     });
-    
-    const rData = await serverResponse.json();
-    return rData;
-  } catch (e) {
-    return e
+    return await response.json();
+  } catch (error) {
+    console.error("Login Error:", error);
+    return { message: "Network error! Please try again." };
   }
 }
 
-
-export async function newUserResponse(newUserDetails){
+export async function newUserResponse(newUserDetails) {
   try {
-  const serverResponse = await fetch("https://super-happiness-7vprqj4vw6pg2p474-8000.app/api/new_user/", {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-CSRFToken': getCSRFToken()
-    },
-    body: JSON.stringify(newUserDetails)
-  });
-  
-  const rData = await serverResponse.json();
-  return rData;
-} catch (e) {
-  return e
-}
+    const response = await fetch("https://super-happiness-7vprqj4vw6pg2p474-8000.app.github.dev/api/new_user/", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': getCSRFToken()
+      },
+      body: JSON.stringify(newUserDetails)
+    });
+    return await response.json();
+  } catch (error) {
+    console.error("Registration Error:", error);
+    return { message: "Network error! Please try again." };
+  }
 }
 
 function getCSRFToken() {
   let cookieValue = null;
   const cookies = document.cookie ? document.cookie.split(';') : [];
-  for (let i = 0; i < cookies.length; i++) {
-    const cookie = cookies[i].trim();
+  for (let cookie of cookies) {
+    cookie = cookie.trim();
     if (cookie.startsWith('csrftoken=')) {
-      cookieValue = cookie.substring('csrftoken='.length, cookie.length);
+      cookieValue = cookie.substring('csrftoken='.length);
       break;
     }
   }

@@ -15,134 +15,134 @@
   <link rel="stylesheet" href="{% static 'css/blogs.css' %}">
   <link rel="stylesheet" href="{% static 'css/contact-us.css' %}">
   <link rel="stylesheet" href="{% static 'css/form.css' %}">
-
-  <style>
-  header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 5px;
-  width: 100%;
-  background-color: #5d005d;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.brand{
-  background: linear-gradient(120deg, #5805FF, #BC05FF);
-  padding: 10px;
-  color: white;
-  text-decoration: none;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-/* Navigation menu style is here...*/
-nav{
-  background: #034CD6;
-  width: 80%;
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-}
-
-nav ul{
-  padding: 10px 5px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-}
-
-.nav-link{
-  text-decoration: none;
-  color: #FFFFFF;
-  padding: 8px 10px;
-font-family: sans-serif;
-font-weight: 700;
-font-style: normal;
- font-size: 1.1rem;
- transition: all .2s ease-in-out;
-}
-
- .nav-link:hover{
-  background: linear-gradient(135deg, #3F3F3FD9, #034CD6);
-  color: #FFFFFF;
-  padding: 8px 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease-in-out;
-  letter-spacing: 0.5px;
-  transform: scale(1.04);
-  font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.nav-link.active {
-  background: linear-gradient(135deg, #3F3F3FD9, #034CD6);
-  color: #FFFFFF;
-  padding: 8px 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease-in-out;
-  letter-spacing: 0.5px;
-  transform: scale(1.05);
-  font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 768px){
-  header{
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 5px;
-  }
   
- .brand{
-   padding: 8px;
-   font-size: 0.8rem;
-   width: auto;
- }
- nav{
- width: 100%;
- }
-  .nav-link{
-  font-size: 0.9rem;
-  }
-}
-
-
+  <style>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5px;
+      width: 100%;
+      background-color: #5d005d;
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    
+    .brand {
+      background: linear-gradient(120deg, #5805FF, #BC05FF);
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-weight: 600;
+      font-style: italic;
+    }
+    
+    /* Navigation menu style is here...*/
+    nav {
+      background: #034CD6;
+      width: 80%;
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+    }
+    
+    nav ul {
+      padding: 10px 5px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+    }
+    
+    .nav-link {
+      text-decoration: none;
+      color: #FFFFFF;
+      padding: 8px 10px;
+      font-family: sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 1.1rem;
+      transition: all .2s ease-in-out;
+    }
+    
+    .nav-link:hover {
+      background: linear-gradient(135deg, #3F3F3FD9, #034CD6);
+      color: #FFFFFF;
+      padding: 8px 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease-in-out;
+      letter-spacing: 0.5px;
+      transform: scale(1.04);
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    .nav-link.active {
+      background: linear-gradient(135deg, #3F3F3FD9, #034CD6);
+      color: #FFFFFF;
+      padding: 8px 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease-in-out;
+      letter-spacing: 0.5px;
+      transform: scale(1.05);
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 5px;
+      }
+      
+      .brand {
+        padding: 8px;
+        font-size: 0.8rem;
+        width: auto;
+      }
+      
+      nav {
+        width: 100%;
+      }
+      
+      .nav-link {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 
 <body>
-    <header>
+  <header>
     <div class="logo"><a class="brand" href="/">Alumni Meet</a></div>
     
-  <nav>
-  <ul>
-    <li><a class="nav-link" href="/">Home</a></li>
-    <li><a class="nav-link" href="/about/">About Us</a></li>
-    <li><a class="nav-link" href="/events/">Events</a></li>
-    <li><a class="nav-link" href="/blogs/">Blogs</a></li>
-    <li><a class="nav-link" href="/gallery/">Gallery</a></li>
-    <li><a class="nav-link" href="/contact-us">Contact Us</a></li>
-    <li><a class="nav-link" href="/profile/">Profile</a></li>
+    <nav>
+      <ul>
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li><a class="nav-link" href="/about/">About Us</a></li>
+        <li><a class="nav-link" href="/events/">Events</a></li>
+        <li><a class="nav-link" href="/blogs/">Blogs</a></li>
+        <li><a class="nav-link" href="/gallery/">Gallery</a></li>
+        <li><a class="nav-link" href="/contact-us">Contact Us</a></li>
+        <li><a class="nav-link" href="/profile/">Profile</a></li>
+        
+      </ul>
+    </nav>
     
-  </ul>
-</nav>
-
   </header>
-
+  
   <main>
-
+    
     {% block content %}
-
+    
     <section class="home">
       <div class="card">
         <h2>About Institute</h2>
@@ -167,7 +167,7 @@ font-style: normal;
         </div>
       </div>
     </section>
-
+    
     <section class="mission">
       <div class="card">
         <div class="head">
@@ -186,7 +186,7 @@ font-style: normal;
         </div>
       </div>
     </section>
-
+    
     <section class="message">
       <div class="card">
         <div class="card-head">
@@ -206,11 +206,11 @@ font-style: normal;
         </div>
       </div>
     </section>
-
+    
     {% endblock %}
-
+    
   </main>
-
+  
   <footer>
     <p>&copy; 2025 - All Rights Reserved - MMIT Polytechnic - Maharajganj (UP).</p>
     <p>
@@ -222,6 +222,18 @@ font-style: normal;
   <script src="{% static 'scripts/min.js'%}"></script>
   <script src="{% static 'scripts/form.js'%}"></script>
   <script type="module" src="{% static 'scripts/modules.js'%}"></script>
+  <script>
+    document.querySelector('#user_type').addEventListener('change', () => {
+      const captureStudent = document.querySelector('.students_details');
+      const isUser = document.querySelector('#user_type').value;
+      if (isUser == 'Student') {
+        captureStudent.style.display = 'block'
+      }
+      else {
+        captureStudent.style.display = 'none'
+      }
+    });
+  </script>
 </body>
 
 </html>

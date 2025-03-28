@@ -16,8 +16,8 @@ Log In
         <h2 class="text-center">Login</h2>
         <form method="POST" class="userForm loginForm" action="">
           {% csrf_token %}
-          <input type="email" id="email" name="email" placeholder="Email" required>
-          <input type="password" id="password" name="password" placeholder="Password" required>
+          <input type="email" id="login_email" name="email" placeholder="Email" required>
+          <input type="password" id="login_password" name="password" placeholder="Password" required>
           <button type="submit" class="submit-btn">Submit</button>
           <hr />
           <a href="#" class="underline resetPassword">Forgot Password?</a>
@@ -37,9 +37,9 @@ Log In
           <!-- User Type Selection -->
           <select id="user_type" name="user_type" required>
             <option value="" disabled selected>Select User Type</option>
-            <option value="1st">Admin</option>
-            <option value="2nd">Alumni</option>
-            <option value="3rd">Student</option>
+            <option value="Admin">Admin</option>
+            <option value="Alumni">Alumni</option>
+            <option value="Student">Student</option>
           </select>
           
           <!-- Adding dynamic features according to user user Selection -->
@@ -62,7 +62,7 @@ Log In
               <option value="1st">1st Year</option>
               <option value="2nd">2nd Year</option>
               <option value="3rd">3rd Year</option>
-              <option value="3rd">Passout</option>
+              <option value="passed">Passout</option>
             </select>
             
           </div>
