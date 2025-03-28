@@ -28,7 +28,7 @@ export function newAdmin(fullname, email, user_type, password) {
 
 export async function sendData(userData) {
   try {
-    const response = await fetch("https://super-happiness-7vprqj4vw6pg2p474-8000.app.github.dev/api/verify_user/", {
+    const response = await fetch("/verify_user/", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ export async function sendData(userData) {
 
 export async function newUserResponse(newUserDetails) {
   try {
-    const response = await fetch("https://super-happiness-7vprqj4vw6pg2p474-8000.app.github.dev/api/new_user/", {
+    const response = await fetch("/new_user/", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
